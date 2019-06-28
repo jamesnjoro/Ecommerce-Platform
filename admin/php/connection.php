@@ -14,19 +14,24 @@ function query($sql,$message){
 
   if($conn->connect_error){
       writelog("Connection failed:" . $conn->connect_error);
+      die();
   }else{
       writelog("connection Successful");
+      
   }
 
   if($conn->query($sql)=== TRUE){
           writelog($message." sucessfull");
       }else{
           writelog($message." failed:".$conn->error);
+          die();
       }
 
       $conn->close();
       writelog("Connection Closed");
   }
+
+  
 
   
 ?>

@@ -183,30 +183,60 @@
             <h1>Products</h1>
             <table id="usersT">
             <tr>
-               <th>Product No</th>
                <th>Image</th>
                <th>Name</th>
                <th>Price</th>
                <th>Stock</th>
                
             </tr>
-            <tr>
-                <td>1</td>
-                <td><img id="pro" src="photos/todo.png"/></td>
-                <td>Vance</td>
-                <td>1500</td>
-                <td>3</td>
-                <td><i class="fas fa-trash-alt"></i></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td><img id="pro" src="photos/todo.png"/></td>
-                <td>Vance</td>
-                <td>1500</td>
-                <td>3</td>
-                <td><i class="fas fa-trash-alt"></i></td>
-            </tr>
+            <?php
+            include("php/common.php");
+              $servername = "localhost";
+              $user = "root";
+              $password = 'password';
+              $Dbname = 'EcommercePlatform';
             
+              $conn = new mysqli($servername, $user, $password, $Dbname);
+            
+              if($conn->connect_error){
+                  writelog("Connection failed:" . $conn->connect_error);
+                  die();
+              }else{
+                  writelog("connection Successful");
+                  
+              }
+            
+              $sql = "SELECT * FROM products";
+              
+
+              $results = $conn->query($sql);
+              
+
+              if($results->num_rows > 0){
+                  while($row = $results->fetch_assoc()){
+                      $photoId = $row['pictureID'];
+                    $sql2 = "SELECT * FROM photos WHERE productID ='".$photoId."'";
+                    $results2 = $conn->query($sql2);
+                      if($results2->num_rows>0){
+                          while($row2 = $results2->fetch_assoc()){
+                              $pic = $row2['photopath'];
+                              break;
+                          }
+                      }
+                    echo "<tr><td><img id='pro' src='photos/".$pic."'/></td>
+                    <td>".$row['productName']."</td>
+                    <td>".$row['price']."</td>
+                    <td>".$row['quantity']."</td>
+                    <td><i class='fas fa-trash-alt'></i></td></tr>";
+                  }
+              }else{
+                  echo "no results";
+              }
+
+                  $conn->close();
+                  writelog("Connection Closed");
+            
+            ?> 
             </table>
        </div>
    

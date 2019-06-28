@@ -15,10 +15,10 @@
             <span id="logo">
                 <img src="admin/photos/todo.png" alt="">
             </span>
-            <nav>
-                <a href="">Home</a>
-                <a href="">Products</a>
-                <a href="">Contact us</a>
+            <nav >
+                <a href="#home">Home</a>
+                <a href="#products">Products</a>
+                <a href="#contactsus">Contact us</a>
             </nav>
             <div id="user">
                 <div><i class="fas fa-shopping-cart"></i><span>Cart</span></div>
@@ -32,8 +32,8 @@
             <div><i class="fas fa-shopping-cart"></i><span><br>Cart</span></div>
             <div><i class="fas fa-user"></i><span><br>User</span></div>
         </div>
-    </header>
-        <div class="carosel">
+    </header >
+        <div class="carosel" id="home">
             <div class="text">
                 <span><h3>To Look Good Is To Feel Good</h3></span>
                 <span><h1>To Look Good Is To Feel Good</h1></span>
@@ -42,7 +42,7 @@
                 <img src="admin/photos/todo.png" alt="">
             </div>
         </div>
-        <div class="container">
+        <div class="container" id="products">
             <div class="mainC">
                 <div class="categories">
                     <div>
@@ -65,51 +65,113 @@
             
             <div class="products">
                 <ul>
-                    <li>
-                        <img src="admin/photos/todo.png" alt="">
-                        <span id="Pname">shirt</span>
-                        <span id="Pprice">100</span>
-                        <a>Add to Cart</a>
-                    </li>
-                    <li>
-                        <img src="admin/photos/todo.png" alt="">
-                        <span id="Pname">shirt</span>
-                        <span id="Pprice">100</span>
-                        <a>Add to Cart</a>
-                    </li>
-                    <li>
-                        <img src="admin/photos/todo.png" alt="">
-                        <span id="Pname">shirt</span>
-                        <span id="Pprice">100</span>
-                        <a>Add to Cart</a>
-                    </li>
+                <?php
+                     include("admin/php/common.php");
+                     $servername = "localhost";
+                     $user = "root";
+                     $password = 'password';
+                     $Dbname = 'EcommercePlatform';
+                   
+                     $conn = new mysqli($servername, $user, $password, $Dbname);
+                   
+                     if($conn->connect_error){
+                         writelog("Connection failed:" . $conn->connect_error);
+                         die();
+                     }else{
+                         writelog("connection Successful");
+                         
+                     }
+                   
+                     $sql = "SELECT * FROM products";
+                     
+       
+                     $results = $conn->query($sql);
+                     
+       
+                     if($results->num_rows > 0){
+                         while($row = $results->fetch_assoc()){
+                             $photoId = $row['pictureID'];
+                           $sql2 = "SELECT * FROM photos WHERE productID ='".$photoId."'";
+                           $results2 = $conn->query($sql2);
+                             if($results2->num_rows>0){
+                                 while($row2 = $results2->fetch_assoc()){
+                                     $pic = $row2['photopath'];
+                                     break;
+                                 }
+                             }
+                           echo "<li>
+                           <img src='admin/photos/". $pic ."'>
+                           <span id='Pname'>".$row['productName']."</span>
+                           <span id='Pprice'>".$row['price']."</span>
+                           <a>Add to Cart</a>
+                       </li>";
+                         }
+                     }else{
+                         echo "no results";
+                     }
+       
+                         $conn->close();
+                         writelog("Connection Closed");
+
+                ?>
                 </ul>
             </div>
             <div class="products">
                 <span><h1>Hot Products</h1></span>
                 <ul>
-                    <li>
-                        <img src="admin/photos/todo.png" alt="">
-                        <span id="Pname">shirt</span>
-                        <span id="Pprice">100</span>
-                        <a>Add to Cart</a>
-                    </li>
-                    <li>
-                        <img src="admin/photos/todo.png" alt="">
-                        <span id="Pname">shirt</span>
-                        <span id="Pprice">100</span>
-                        <a>Add to Cart</a>
-                    </li>
-                    <li>
-                        <img src="admin/photos/todo.png" alt="">
-                        <span id="Pname">shirt</span>
-                        <span id="Pprice">100</span>
-                        <a>Add to Cart</a>
-                    </li>
+                <?php
+                     
+                     $servername = "localhost";
+                     $user = "root";
+                     $password = 'password';
+                     $Dbname = 'EcommercePlatform';
+                   
+                     $conn = new mysqli($servername, $user, $password, $Dbname);
+                   
+                     if($conn->connect_error){
+                         writelog("Connection failed:" . $conn->connect_error);
+                         die();
+                     }else{
+                         writelog("connection Successful");
+                         
+                     }
+                   
+                     $sql = "SELECT * FROM products";
+                     
+       
+                     $results = $conn->query($sql);
+                     
+       
+                     if($results->num_rows > 0){
+                         while($row = $results->fetch_assoc()){
+                             $photoId = $row['pictureID'];
+                           $sql2 = "SELECT * FROM photos WHERE productID ='".$photoId."'";
+                           $results2 = $conn->query($sql2);
+                             if($results2->num_rows>0){
+                                 while($row2 = $results2->fetch_assoc()){
+                                     $pic = $row2['photopath'];
+                                     break;
+                                 }
+                             }
+                           echo "<li>
+                           <img src='admin/photos/". $pic ."'>
+                           <span id='Pname'>".$row['productName']."</span>
+                           <span id='Pprice'>".$row['price']."</span>
+                           <a>Add to Cart</a>
+                       </li>";
+                         }
+                     }else{
+                         echo "no results";
+                     }
+       
+                         $conn->close();
+                         writelog("Connection Closed");
+
+                ?>
                 </ul>
             </div>
         </div>
-        <footer>
+        <footer id="contactsus">
             <div id="contacts">
 
             </div>

@@ -68,6 +68,7 @@ isset($_POST['ProductK'])){
                  VALUES("'.$pictureID . '","' . $name .'")';
 
                 query($sql,"Photo saved and uploaded");
+                header('Location: ../index.php');
              
             }
         }
@@ -75,7 +76,7 @@ isset($_POST['ProductK'])){
     }
 }else{
         echo 'no photo selected';
-
+        header('Location: ../index.php');
         
             
         
@@ -85,6 +86,7 @@ isset($_POST['ProductK'])){
 
 }else{
     echo "boos shit happened";
+    header('Location: ../index.php');
 }
 
 function rearrange($files){

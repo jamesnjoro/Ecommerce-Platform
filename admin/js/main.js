@@ -58,10 +58,10 @@ function products(){
 }
 
 function startup(){
-    $(".dashboard").hide();
+    $(".dashboard").show();
     $(".users").hide();
     $(".orders").hide();
-    $(".products").show();
+    $(".products").hide();
 }
 
 function modalD(){
