@@ -1,0 +1,287 @@
+connection Successful 2019-Jun-Fri 11:16:03am
+Database Created 2019-Jun-Fri 11:16:03am
+connection successful 2019-Jun-Fri 11:16:03am
+Product table created successfully 2019-Jun-Fri 11:16:03am
+Users table created successfully 2019-Jun-Fri 11:16:03am
+admin table created successfully 2019-Jun-Fri 11:16:04am
+order table created successfully 2019-Jun-Fri 11:16:04am
+suborder table created successfully 2019-Jun-Fri 11:16:04am
+photo table created successfully 2019-Jun-Fri 11:16:05am
+cart table created successfully 2019-Jun-Fri 11:16:05am
+connection Successful 2019-Jun-Fri 11:21:56am
+product created failed:Data truncated for column 'pictureID' at row 1 2019-Jun-Fri 11:21:56am
+Connection Closed 2019-Jun-Fri 11:21:56am
+connection Successful 2019-Jun-Fri 11:22:53am
+Database Created 2019-Jun-Fri 11:22:53am
+connection successful 2019-Jun-Fri 11:22:53am
+Unable to create product table:Incorrect column specifier for column 'pictureID' 2019-Jun-Fri 11:22:53am
+Users table created successfully 2019-Jun-Fri 11:22:53am
+admin table created successfully 2019-Jun-Fri 11:22:54am
+order table created successfully 2019-Jun-Fri 11:22:54am
+suborder table created successfully 2019-Jun-Fri 11:22:54am
+photo table created successfully 2019-Jun-Fri 11:22:54am
+cart table created successfully 2019-Jun-Fri 11:22:55am
+connection Successful 2019-Jun-Fri 11:23:22am
+product created failed:Table 'EcommercePlatform.products' doesn't exist 2019-Jun-Fri 11:23:22am
+Connection Closed 2019-Jun-Fri 11:23:22am
+connection Successful 2019-Jun-Fri 11:24:47am
+Creation Error:Can't create database 'EcommercePlatform'; database exists 2019-Jun-Fri 11:24:47am
+connection successful 2019-Jun-Fri 11:24:47am
+Product table created successfully 2019-Jun-Fri 11:24:48am
+Unable to create users table:Table 'users' already exists 2019-Jun-Fri 11:24:48am
+Unable to create admin table:Table 'admin' already exists 2019-Jun-Fri 11:24:48am
+Unable to create order table:Table 'orders' already exists 2019-Jun-Fri 11:24:48am
+Unable to create suborder table:Table 'suborders' already exists 2019-Jun-Fri 11:24:48am
+Unable to create photo table:Table 'photos' already exists 2019-Jun-Fri 11:24:48am
+Unable to create cart table:Table 'cart' already exists 2019-Jun-Fri 11:24:48am
+connection Successful 2019-Jun-Fri 11:25:11am
+product created failed:Data truncated for column 'pictureID' at row 1 2019-Jun-Fri 11:25:11am
+Connection Closed 2019-Jun-Fri 11:25:11am
+connection Successful 2019-Jun-Fri 11:26:46am
+product created sucessfull 2019-Jun-Fri 11:26:46am
+Connection Closed 2019-Jun-Fri 11:26:46am
+connection Successful 2019-Jun-Fri 11:27:48am
+product created sucessfull 2019-Jun-Fri 11:27:48am
+Connection Closed 2019-Jun-Fri 11:27:48am
+connection Successful 2019-Jun-Fri 11:29:01am
+product created sucessfull 2019-Jun-Fri 11:29:01am
+Connection Closed 2019-Jun-Fri 11:29:01am
+connection Successful 2019-Jun-Fri 01:13:26pm
+product created sucessfull 2019-Jun-Fri 01:13:26pm
+Connection Closed 2019-Jun-Fri 01:13:26pm
+connection Successful 2019-Jun-Fri 01:16:56pm
+product created sucessfull 2019-Jun-Fri 01:16:56pm
+Connection Closed 2019-Jun-Fri 01:16:56pm
+connection Successful 2019-Jun-Fri 01:18:38pm
+product created sucessfull 2019-Jun-Fri 01:18:38pm
+Connection Closed 2019-Jun-Fri 01:18:38pm
+connection Successful 2019-Jun-Fri 01:19:12pm
+product created sucessfull 2019-Jun-Fri 01:19:13pm
+Connection Closed 2019-Jun-Fri 01:19:13pm
+connection Successful 2019-Jun-Fri 01:21:59pm
+product created sucessfull 2019-Jun-Fri 01:21:59pm
+Connection Closed 2019-Jun-Fri 01:21:59pm
+connection Successful 2019-Jun-Fri 01:22:27pm
+product created sucessfull 2019-Jun-Fri 01:22:27pm
+Connection Closed 2019-Jun-Fri 01:22:27pm
+connection Successful 2019-Jun-Fri 01:23:12pm
+product created sucessfull 2019-Jun-Fri 01:23:12pm
+Connection Closed 2019-Jun-Fri 01:23:12pm
+connection Successful 2019-Jun-Fri 01:23:35pm
+product created sucessfull 2019-Jun-Fri 01:23:35pm
+Connection Closed 2019-Jun-Fri 01:23:35pm
+connection Successful 2019-Jun-Fri 01:25:09pm
+product created sucessfull 2019-Jun-Fri 01:25:09pm
+Connection Closed 2019-Jun-Fri 01:25:09pm
+connection Successful 2019-Jun-Fri 01:30:02pm
+product created sucessfull 2019-Jun-Fri 01:30:02pm
+Connection Closed 2019-Jun-Fri 01:30:02pm
+connection Successful 2019-Jun-Fri 01:31:19pm
+product created sucessfull 2019-Jun-Fri 01:31:19pm
+Connection Closed 2019-Jun-Fri 01:31:19pm
+connection Successful 2019-Jun-Fri 01:31:44pm
+product created sucessfull 2019-Jun-Fri 01:31:44pm
+Connection Closed 2019-Jun-Fri 01:31:44pm
+connection Successful 2019-Jun-Fri 01:34:26pm
+product created sucessfull 2019-Jun-Fri 01:34:26pm
+Connection Closed 2019-Jun-Fri 01:34:26pm
+connection Successful 2019-Jun-Fri 01:36:26pm
+product created sucessfull 2019-Jun-Fri 01:36:26pm
+Connection Closed 2019-Jun-Fri 01:36:26pm
+connection Successful 2019-Jun-Fri 01:37:45pm
+product created sucessfull 2019-Jun-Fri 01:37:45pm
+Connection Closed 2019-Jun-Fri 01:37:45pm
+connection Successful 2019-Jun-Fri 01:39:18pm
+product created sucessfull 2019-Jun-Fri 01:39:18pm
+Connection Closed 2019-Jun-Fri 01:39:18pm
+connection Successful 2019-Jun-Fri 01:39:35pm
+product created sucessfull 2019-Jun-Fri 01:39:36pm
+Connection Closed 2019-Jun-Fri 01:39:36pm
+f- 2019-Jun-Fri 01:39:36pm
+Does not have the required extension 2019-Jun-Fri 01:39:36pm
+connection Successful 2019-Jun-Fri 01:40:14pm
+product created sucessfull 2019-Jun-Fri 01:40:14pm
+Connection Closed 2019-Jun-Fri 01:40:14pm
+sunset.jpghad been saved 2019-Jun-Fri 01:40:14pm
+connection Successful 2019-Jun-Fri 01:40:14pm
+Photo saved and uploaded failed:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1561722014jpg")' at line 2 2019-Jun-Fri 01:40:14pm
+Connection Closed 2019-Jun-Fri 01:40:14pm
+sunset.pnghad been saved 2019-Jun-Fri 01:40:14pm
+connection Successful 2019-Jun-Fri 01:40:14pm
+Photo saved and uploaded failed:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1561722014png")' at line 2 2019-Jun-Fri 01:40:14pm
+Connection Closed 2019-Jun-Fri 01:40:14pm
+connection Successful 2019-Jun-Fri 01:41:15pm
+product created sucessfull 2019-Jun-Fri 01:41:15pm
+Connection Closed 2019-Jun-Fri 01:41:15pm
+sunset.jpghad been saved 2019-Jun-Fri 01:41:15pm
+connection Successful 2019-Jun-Fri 01:41:15pm
+Photo saved and uploaded failed:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1561722075jpg")' at line 2 2019-Jun-Fri 01:41:15pm
+Connection Closed 2019-Jun-Fri 01:41:15pm
+sunset.pnghad been saved 2019-Jun-Fri 01:41:15pm
+connection Successful 2019-Jun-Fri 01:41:15pm
+Photo saved and uploaded failed:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1561722075png")' at line 2 2019-Jun-Fri 01:41:15pm
+Connection Closed 2019-Jun-Fri 01:41:15pm
+connection Successful 2019-Jun-Fri 01:41:33pm
+product created sucessfull 2019-Jun-Fri 01:41:33pm
+Connection Closed 2019-Jun-Fri 01:41:33pm
+sunset.jpghad been saved 2019-Jun-Fri 01:41:33pm
+connection Successful 2019-Jun-Fri 01:41:33pm
+Photo saved and uploaded failed:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1561722093jpg")' at line 2 2019-Jun-Fri 01:41:33pm
+Connection Closed 2019-Jun-Fri 01:41:33pm
+sunset.pnghad been saved 2019-Jun-Fri 01:41:33pm
+connection Successful 2019-Jun-Fri 01:41:33pm
+Photo saved and uploaded failed:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1561722093png")' at line 2 2019-Jun-Fri 01:41:33pm
+Connection Closed 2019-Jun-Fri 01:41:33pm
+connection Successful 2019-Jun-Fri 01:41:52pm
+product created sucessfull 2019-Jun-Fri 01:41:52pm
+Connection Closed 2019-Jun-Fri 01:41:52pm
+sunset.jpghad been saved 2019-Jun-Fri 01:41:52pm
+connection Successful 2019-Jun-Fri 01:41:52pm
+Photo saved and uploaded failed:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1561722112jpg")' at line 2 2019-Jun-Fri 01:41:52pm
+Connection Closed 2019-Jun-Fri 01:41:52pm
+sunset.pnghad been saved 2019-Jun-Fri 01:41:52pm
+connection Successful 2019-Jun-Fri 01:41:52pm
+Photo saved and uploaded failed:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1561722112png")' at line 2 2019-Jun-Fri 01:41:52pm
+Connection Closed 2019-Jun-Fri 01:41:52pm
+connection Successful 2019-Jun-Fri 01:43:49pm
+product created sucessfull 2019-Jun-Fri 01:43:49pm
+Connection Closed 2019-Jun-Fri 01:43:49pm
+sunset.jpghad been saved 2019-Jun-Fri 01:43:49pm
+connection Successful 2019-Jun-Fri 01:43:49pm
+Photo saved and uploaded sucessfull 2019-Jun-Fri 01:43:49pm
+Connection Closed 2019-Jun-Fri 01:43:49pm
+sunset.pnghad been saved 2019-Jun-Fri 01:43:49pm
+connection Successful 2019-Jun-Fri 01:43:49pm
+Photo saved and uploaded sucessfull 2019-Jun-Fri 01:43:49pm
+Connection Closed 2019-Jun-Fri 01:43:49pm
+connection Successful 2019-Jun-Fri 01:46:59pm
+product created sucessfull 2019-Jun-Fri 01:46:59pm
+Connection Closed 2019-Jun-Fri 01:46:59pm
+sunset.jpghad been saved 2019-Jun-Fri 01:46:59pm
+connection Successful 2019-Jun-Fri 01:46:59pm
+Photo saved and uploaded sucessfull 2019-Jun-Fri 01:46:59pm
+Connection Closed 2019-Jun-Fri 01:46:59pm
+sunset.pnghad been saved 2019-Jun-Fri 01:46:59pm
+connection Successful 2019-Jun-Fri 01:46:59pm
+Photo saved and uploaded sucessfull 2019-Jun-Fri 01:46:59pm
+Connection Closed 2019-Jun-Fri 01:46:59pm
+connection Successful 2019-Jun-Fri 01:47:15pm
+product created sucessfull 2019-Jun-Fri 01:47:15pm
+Connection Closed 2019-Jun-Fri 01:47:15pm
+sunset.jpghad been saved 2019-Jun-Fri 01:47:15pm
+connection Successful 2019-Jun-Fri 01:47:15pm
+Photo saved and uploaded sucessfull 2019-Jun-Fri 01:47:15pm
+Connection Closed 2019-Jun-Fri 01:47:15pm
+sunset.pnghad been saved 2019-Jun-Fri 01:47:15pm
+connection Successful 2019-Jun-Fri 01:47:15pm
+Photo saved and uploaded sucessfull 2019-Jun-Fri 01:47:15pm
+Connection Closed 2019-Jun-Fri 01:47:15pm
+connection Successful 2019-Jun-Fri 01:47:35pm
+product created sucessfull 2019-Jun-Fri 01:47:35pm
+Connection Closed 2019-Jun-Fri 01:47:35pm
+sunset.jpghad been saved 2019-Jun-Fri 01:47:35pm
+connection Successful 2019-Jun-Fri 01:47:35pm
+Photo saved and uploaded sucessfull 2019-Jun-Fri 01:47:35pm
+Connection Closed 2019-Jun-Fri 01:47:35pm
+sunset.pnghad been saved 2019-Jun-Fri 01:47:35pm
+connection Successful 2019-Jun-Fri 01:47:35pm
+Photo saved and uploaded sucessfull 2019-Jun-Fri 01:47:35pm
+Connection Closed 2019-Jun-Fri 01:47:35pm
+connection Successful 2019-Jun-Fri 01:48:08pm
+product created sucessfull 2019-Jun-Fri 01:48:08pm
+Connection Closed 2019-Jun-Fri 01:48:08pm
+sunset.jpghad been saved 2019-Jun-Fri 01:48:08pm
+connection Successful 2019-Jun-Fri 01:48:08pm
+Photo saved and uploaded sucessfull 2019-Jun-Fri 01:48:08pm
+Connection Closed 2019-Jun-Fri 01:48:08pm
+sunset.pnghad been saved 2019-Jun-Fri 01:48:08pm
+connection Successful 2019-Jun-Fri 01:48:08pm
+Photo saved and uploaded sucessfull 2019-Jun-Fri 01:48:08pm
+Connection Closed 2019-Jun-Fri 01:48:08pm
+connection Successful 2019-Jun-Fri 01:48:35pm
+product created sucessfull 2019-Jun-Fri 01:48:35pm
+Connection Closed 2019-Jun-Fri 01:48:35pm
+sunset.jpghad been saved 2019-Jun-Fri 01:48:35pm
+connection Successful 2019-Jun-Fri 01:48:35pm
+Photo saved and uploaded sucessfull 2019-Jun-Fri 01:48:35pm
+Connection Closed 2019-Jun-Fri 01:48:35pm
+sunset.pnghad been saved 2019-Jun-Fri 01:48:35pm
+connection Successful 2019-Jun-Fri 01:48:35pm
+Photo saved and uploaded sucessfull 2019-Jun-Fri 01:48:35pm
+Connection Closed 2019-Jun-Fri 01:48:35pm
+connection Successful 2019-Jun-Fri 01:51:23pm
+product created sucessfull 2019-Jun-Fri 01:51:23pm
+Connection Closed 2019-Jun-Fri 01:51:23pm
+sunset.jpghad been saved 2019-Jun-Fri 01:51:23pm
+connection Successful 2019-Jun-Fri 01:51:23pm
+Photo saved and uploaded sucessfull 2019-Jun-Fri 01:51:23pm
+Connection Closed 2019-Jun-Fri 01:51:23pm
+sunset.pnghad been saved 2019-Jun-Fri 01:51:23pm
+connection Successful 2019-Jun-Fri 01:51:23pm
+Photo saved and uploaded sucessfull 2019-Jun-Fri 01:51:23pm
+Connection Closed 2019-Jun-Fri 01:51:23pm
+connection Successful 2019-Jun-Fri 01:52:57pm
+product created sucessfull 2019-Jun-Fri 01:52:57pm
+Connection Closed 2019-Jun-Fri 01:52:57pm
+sunset.jpghad been saved 2019-Jun-Fri 01:52:57pm
+connection Successful 2019-Jun-Fri 01:52:57pm
+Photo saved and uploaded sucessfull 2019-Jun-Fri 01:52:57pm
+Connection Closed 2019-Jun-Fri 01:52:57pm
+sunset.pnghad been saved 2019-Jun-Fri 01:52:57pm
+connection Successful 2019-Jun-Fri 01:52:57pm
+Photo saved and uploaded sucessfull 2019-Jun-Fri 01:52:57pm
+Connection Closed 2019-Jun-Fri 01:52:57pm
+connection Successful 2019-Jun-Fri 01:54:43pm
+product created sucessfull 2019-Jun-Fri 01:54:43pm
+Connection Closed 2019-Jun-Fri 01:54:43pm
+sunset.jpghad been saved 2019-Jun-Fri 01:54:43pm
+connection Successful 2019-Jun-Fri 01:54:43pm
+Photo saved and uploaded sucessfull 2019-Jun-Fri 01:54:44pm
+Connection Closed 2019-Jun-Fri 01:54:44pm
+sunset.pnghad been saved 2019-Jun-Fri 01:54:44pm
+connection Successful 2019-Jun-Fri 01:54:44pm
+Photo saved and uploaded sucessfull 2019-Jun-Fri 01:54:44pm
+Connection Closed 2019-Jun-Fri 01:54:44pm
+connection Successful 2019-Jun-Fri 01:55:30pm
+product created sucessfull 2019-Jun-Fri 01:55:30pm
+Connection Closed 2019-Jun-Fri 01:55:30pm
+sunset.jpghad been saved 2019-Jun-Fri 01:55:30pm
+connection Successful 2019-Jun-Fri 01:55:30pm
+Photo saved and uploaded sucessfull 2019-Jun-Fri 01:55:30pm
+Connection Closed 2019-Jun-Fri 01:55:30pm
+sunset.pnghad been saved 2019-Jun-Fri 01:55:30pm
+connection Successful 2019-Jun-Fri 01:55:30pm
+Photo saved and uploaded sucessfull 2019-Jun-Fri 01:55:30pm
+Connection Closed 2019-Jun-Fri 01:55:30pm
+connection Successful 2019-Jun-Fri 01:55:54pm
+product created sucessfull 2019-Jun-Fri 01:55:54pm
+Connection Closed 2019-Jun-Fri 01:55:54pm
+sunset.jpghad been saved 2019-Jun-Fri 01:55:54pm
+connection Successful 2019-Jun-Fri 01:55:54pm
+Photo saved and uploaded sucessfull 2019-Jun-Fri 01:55:54pm
+Connection Closed 2019-Jun-Fri 01:55:54pm
+sunset.pnghad been saved 2019-Jun-Fri 01:55:54pm
+connection Successful 2019-Jun-Fri 01:55:54pm
+Photo saved and uploaded sucessfull 2019-Jun-Fri 01:55:54pm
+Connection Closed 2019-Jun-Fri 01:55:54pm
+connection Successful 2019-Jun-Fri 01:58:55pm
+Database Created 2019-Jun-Fri 01:58:55pm
+connection successful 2019-Jun-Fri 01:58:55pm
+Product table created successfully 2019-Jun-Fri 01:58:56pm
+Users table created successfully 2019-Jun-Fri 01:58:56pm
+admin table created successfully 2019-Jun-Fri 01:58:56pm
+order table created successfully 2019-Jun-Fri 01:58:57pm
+suborder table created successfully 2019-Jun-Fri 01:58:57pm
+photo table created successfully 2019-Jun-Fri 01:58:57pm
+cart table created successfully 2019-Jun-Fri 01:58:58pm
+connection Successful 2019-Jun-Fri 02:00:38pm
+product created sucessfull 2019-Jun-Fri 02:00:39pm
+Connection Closed 2019-Jun-Fri 02:00:39pm
+images.jpeghad been saved 2019-Jun-Fri 02:00:39pm
+connection Successful 2019-Jun-Fri 02:00:39pm
+Photo saved and uploaded sucessfull 2019-Jun-Fri 02:00:39pm
+Connection Closed 2019-Jun-Fri 02:00:39pm
+images (1).jpeghad been saved 2019-Jun-Fri 02:00:39pm
+connection Successful 2019-Jun-Fri 02:00:39pm
+Photo saved and uploaded sucessfull 2019-Jun-Fri 02:00:39pm
+Connection Closed 2019-Jun-Fri 02:00:39pm

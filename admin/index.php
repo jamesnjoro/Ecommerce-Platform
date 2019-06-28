@@ -7,6 +7,7 @@
     <title>Groundz clothes</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="../awesomefont/css/all.css">
+    
 </head>
 <body>
    <div class="sidenav">
@@ -215,8 +216,8 @@
        <div id="modalContent">
             <a id="cls">&times</a>
             <h1>Add Product</h1>
-           
-           <form action="" method="post">
+           <div id="validateerror" ></div>
+           <form action="php/productReg.php" onsubmit="return validate()" method="post" enctype="multipart/form-data">
               <div id="details">
                     <div class="Det">
                         <span>Product Name</span>
@@ -224,30 +225,78 @@
                     </div>
                     <div class="Det">
                         <span>Category</span>
-                        <input type="text" name="ProductC" id="ProductC">
+                        <select type="text" name="ProductC" id="ProductC">
+                        <option value="shirt">shirt</option>
+                        <option value="trouser">trouser</option>
+                        <option value="shoe">shoe</option>
+                        </select>
+                    </div>
+                    <div class="Det">
+                        <span>Subcategory</span>
+                        <select type="text" name="ProductS" id="ProductS">
+                        <option value="none">none</option>
+                        <option value="sweats">Sweats</option>
+                        <option value="kaki">Kaki</option>
+                        <option value="material">Material</option>
+                        </select>
+                    </div>
+                    <div class="Det">
+                        <span>Gender</span>
+                        <select type="text" name="ProductG" id="ProductG">
+                        <option value="male">male</option>
+                        <option value="female">female</option>
+                        </select>
                     </div>
                     <div class="Det">
                         <span>Price</span>
                         <input type="text" name="ProductP" id="ProductP">
                     </div>
                     <div class="Det">
+                        <span>Discount</span>
+                        <input type="text" name="ProductD" id="ProductD">
+                    </div>
+                    <div class="Det">
                         <span>Size</span>
-                        <input type="text" name="ProductS" id="ProductS">
+                        <input type="text" name="ProductSi" id="ProductSi">
                     </div>
                     <div class="Det">
                         <span>Quantity</span>
                         <input type="text" name="ProductQ" id="ProductQ">
                     </div>
+                    <div class="Det">
+                        <span>Keywords</span>
+                        <input type="text" name="ProductK" id="ProductK">
+                    </div>
+                    <div id="pic">
+                    <span id="files"> Pictures</span>
+                    <input type="file" name="files[]" multiple="">
+                </div>
+                    
              </div>
-               <div id="pic">
-                   <span><img src="photos/todo.png"/></span>
-                   <input type="text" name="picL" id="picL">
-                   <input type="button" value="Load">
-                   <i class="fas fa-plus"></i>
-               </div>
+            
+               <input type="submit" value="submit">
            </form>
        </div>
    </div>
+<script type="text/javascript">
+
+function validate(){
+    var name = document.getElementById("ProductN");
+    var price = document.getElementById("ProductP");
+    var size = document.getElementById("ProductSi");
+    var quantity = document.getElementById("ProductQ");
+    
+    var err = document.getElementById("validateerror");
+
+    if(name.value == ""||price.value == ""||size.value == ""||quantity.value == ""){
+        err.innerHTML = "Fill all required fields";
+        return false
+    }else{
+        return true;
+    }
+}
+</script>
+
 <script src="js/jquery.js"></script>
 <script src="js/main.js"></script>
 

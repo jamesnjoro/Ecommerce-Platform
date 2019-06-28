@@ -3,7 +3,8 @@
     
 }
 body{
-    background-color: rgb(226, 237, 247)
+    background-color: rgb(226, 237, 247);
+    width: 100%;
 }
 
 nav a{
@@ -60,6 +61,7 @@ nav a{
 .container{
     background-color: white;
     padding-top: 30px;
+    width: 100%;
 }
 .mainC{
  border-bottom: solid 1px black;
@@ -124,7 +126,7 @@ nav a{
         background-color: white;
         align-items: center;
         justify-content: center;
-        padding: 10px;
+        padding-top: 10px;
     }
     #logo img{
         height: 40px;

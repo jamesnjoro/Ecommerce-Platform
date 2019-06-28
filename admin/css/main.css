@@ -155,6 +155,7 @@ body{
     width: 100%;
     height: 100%;
     display: none;
+    overflow-y: auto;
 }
 #modalContent{
     background-color: white;
@@ -185,6 +186,7 @@ body{
     grid-template-columns: 1fr 1fr 1fr;
     grid-row-gap: 20px;
     grid-column-gap: 15px;
+    overflow-x: hidden;
     
 }
 .Det{
@@ -259,7 +261,7 @@ body{
         grid-template-columns: 1fr;
         grid-row-gap: 20px;
         grid-column-gap: 15px;
-        
+        overflow-x: hidden;
     }
 
   
@@ -269,6 +271,7 @@ body{
         width:90%;
         margin: 5% auto;
         padding: 10px;
+        
     }
 
 }
@@ -292,7 +295,7 @@ body{
         grid-template-columns: 1fr 1fr;
         grid-row-gap: 20px;
         grid-column-gap: 15px;
-        
+        overflow-x: hidden;
     }
 
    
@@ -312,7 +315,7 @@ body{
         grid-template-columns: 1fr 1fr;
         grid-row-gap: 20px;
         grid-column-gap: 15px;
-        
+        overflow-x: hidden;
     }
 
     
@@ -339,10 +342,11 @@ body{
     }
     #details{
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(auto-fit,3,1fr);
         grid-row-gap: 20px;
         grid-column-gap: 15px;
-        
+        overflow-x: hidden;
+        width:100%;
     }
  }
 
@@ -367,10 +371,11 @@ body{
     }
     #details{
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(auto-fit,3,1fr);
         grid-row-gap: 20px;
         grid-column-gap: 15px;
-        
+        overflow-x: hidden;
+        width:90%;
     }
     }
 

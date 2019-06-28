@@ -1,7 +1,6 @@
     startup();
 const modal = document.getElementById('modal');
 const cls = document.getElementById('cls');
-
 cls.addEventListener('click',modalD);
 
 function collapse(){
@@ -72,3 +71,4 @@ function modalD(){
 function modalA(){
     modal.style.display="block";
 }
+
