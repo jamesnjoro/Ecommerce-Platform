@@ -21,15 +21,35 @@
                 <a href="#contactsus">Contact us</a>
             </nav>
             <div id="user">
-                <div><i class="fas fa-shopping-cart"></i><span>Cart</span></div>
-                <div><span>Account</span><i class="fas fa-caret-down"></i></i></div>
+                <div><i class="fas fa-shopping-cart"><span id='num'>5</span> </i><span>Cart</span></div>
+                <div id="t">
+                
+                <?php
+                    session_start();
+
+                    if(isset($_SESSION['email'])){
+                        echo '<span>'.$_SESSION['user'].'</span><i class="fas fa-caret-down" style="font-size: 10px;padding-left: 5px;"></i></i>
+                        <ul id="c">
+                            <li>View Orders</li>
+                            <li><a href="login/logout.php">Logout</a></li>
+                        </ul>';
+                    }else{
+                        echo '<span> <a href="login/">Login</a></span>';
+                    }
+                ?>
+
+
+
+                
+                
+                </div>
                 
             </div>
         </div>
         <div class="bottomNav">
-           <div><i class="fas fa-home"></i><span><br>Home</span></div> 
-            <div><i class="fas fa-shopping-bag"></i><span><br>Products</span></div>
-            <div><i class="fas fa-shopping-cart"></i><span><br>Cart</span></div>
+           <div><i class="fas fa-home"></i><span><br> <a href="#home">Home</a> </span></div> 
+            <div><i class="fas fa-shopping-bag"></i><span><br> <a href="#products">Products</a> </span></div>
+            <div><i class="fas fa-shopping-cart"><span id='num'>5</span></i><span><br>Cart</span>  </div>
             <div><i class="fas fa-user"></i><span><br>User</span></div>
         </div>
     </header >
@@ -67,21 +87,7 @@
                 <ul>
                 <?php
                      include("admin/php/common.php");
-                     $servername = "localhost";
-                     $user = "root";
-                     $password = 'password';
-                     $Dbname = 'EcommercePlatform';
-                   
-                     $conn = new mysqli($servername, $user, $password, $Dbname);
-                   
-                     if($conn->connect_error){
-                         writelog("Connection failed:" . $conn->connect_error);
-                         die();
-                     }else{
-                         writelog("connection Successful");
-                         
-                     }
-                   
+                     include("admin/php/config.php");
                      $sql = "SELECT * FROM products";
                      
        
@@ -121,20 +127,7 @@
                 <ul>
                 <?php
                      
-                     $servername = "localhost";
-                     $user = "root";
-                     $password = 'password';
-                     $Dbname = 'EcommercePlatform';
-                   
-                     $conn = new mysqli($servername, $user, $password, $Dbname);
-                   
-                     if($conn->connect_error){
-                         writelog("Connection failed:" . $conn->connect_error);
-                         die();
-                     }else{
-                         writelog("connection Successful");
-                         
-                     }
+                     include("admin/php/config.php");
                    
                      $sql = "SELECT * FROM products";
                      

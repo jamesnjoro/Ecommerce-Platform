@@ -5,26 +5,16 @@ include("common.php");
 
 function query($sql,$message){
 
-  $servername = "localhost";
-  $user = "root";
-  $password = 'password';
-  $Dbname = 'EcommercePlatform';
-
-  $conn = new mysqli($servername, $user, $password, $Dbname);
-
-  if($conn->connect_error){
-      writelog("Connection failed:" . $conn->connect_error);
-      die();
-  }else{
-      writelog("connection Successful");
-      
-  }
+    include('config.php');
 
   if($conn->query($sql)=== TRUE){
           writelog($message." sucessfull");
+          $message = 1;
+          return $message;
       }else{
           writelog($message." failed:".$conn->error);
-          die();
+          $message= $conn->error;
+          return $message;
       }
 
       $conn->close();

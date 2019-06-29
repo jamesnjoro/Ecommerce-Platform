@@ -34,10 +34,23 @@ nav a{
     font-size: 23px;
     padding-right: 5px;
 }
-#user div i:last-child{
-    font-size: 10px;
-    padding-left: 5px;
+
+#c{
+    background-color: rgba(198, 222, 233, 0.486);
+    position: absolute;
+    display: block;
+    list-style: none;
+    right: 40px;
+    height: 0px;
+    overflow: hidden;
+    transition-duration: 500ms;
 }
+
+#t:hover #c{
+    height: 60px;
+}
+
+
 
 .carosel{
     display: grid;
@@ -135,6 +148,7 @@ nav a{
 
     .bottomNav{
         display: grid;
+        font-size: 14px;
         position: fixed;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         bottom: 0;
@@ -146,7 +160,14 @@ nav a{
         padding: 10px;
 
     }
-
+#num{
+    margin-left: -20px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+    color: white;
+    background-color: rgb(230, 41, 7);
+}
     .carosel{
         display: grid;
         grid-template-columns: auto;
@@ -182,6 +203,7 @@ nav a{
     }
    
 }
+
 
 @media only screen and (min-width: 600px) {
     .navbar{

@@ -1,3 +1,11 @@
+<?php
+        session_start();
+        if(isset($_SESSION['admin'])){
+       
+       
+        ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +18,8 @@
     
 </head>
 <body>
+
+      
    <div class="sidenav">
        <a id="clsBtn" onclick="collapse()">&times</a>
        <h1 id="sideHeading"> Admin </h1>
@@ -191,20 +201,7 @@
             </tr>
             <?php
             include("php/common.php");
-              $servername = "localhost";
-              $user = "root";
-              $password = 'password';
-              $Dbname = 'EcommercePlatform';
-            
-              $conn = new mysqli($servername, $user, $password, $Dbname);
-            
-              if($conn->connect_error){
-                  writelog("Connection failed:" . $conn->connect_error);
-                  die();
-              }else{
-                  writelog("connection Successful");
-                  
-              }
+            include("php/config.php");
             
               $sql = "SELECT * FROM products";
               
@@ -332,3 +329,10 @@ function validate(){
 
 </body>
 </html>
+
+<?php
+        }
+        else{
+            header("location: login/index.php");
+        }
+?>

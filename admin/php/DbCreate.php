@@ -55,15 +55,11 @@
     }
 
     $sql = 'CREATE TABLE users(
-        id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        firstName VARCHAR(30) NOT NULL,
-        secondName VARCHAR(30) NOT NULL,
-        phoneNumber INT UNSIGNED NOT NULL,
-        email VARCHAR(50) NOT NULL,
-        county VARCHAR(30) NOT NULL,
-        subcounty VARCHAR(30) NOT NULL,
-        password VARCHAR(30) NOT NULL,
-        gender VARCHAR(10) NOT NULL
+        id INT UNSIGNED AUTO_INCREMENT UNIQUE PRIMARY KEY,
+        Name VARCHAR(30) NOT NULL,
+        email VARCHAR(50) UNIQUE NOT NULL,
+        password VARCHAR(30) NOT NULL
+        
     )';
 
 if($conn->query($sql) === TRUE){
@@ -74,9 +70,8 @@ if($conn->query($sql) === TRUE){
 
 $sql = 'CREATE TABLE admin(
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    firstName VARCHAR(30) NOT NULL,
-    secondName VARCHAR(30) NOT NULL,
-    email VARCHAR(50) NOT NULL,
+    Name VARCHAR(30) NOT NULL,
+    email  VARCHAR(50) UNIQUE NOT NULL,
     password VARCHAR(30) NOT NULL
 )';
 
