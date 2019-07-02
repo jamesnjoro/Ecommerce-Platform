@@ -25,7 +25,7 @@ isset($_POST['ProductK'])){
     $id2 = explode(" ",$id);
     $pictureID = end($id2);
 
-    $sql = 'INSERT INTO products (productName,category,subcategory,price,size,gender,quantity,keyword,discount,pictureID)
+    $sql = 'INSERT INTO products (productName,category,subcategory,price,size,age,quantity,keyword,discount,pictureID)
     VALUES("'. $name. '","' . $category. '","' . $sub .'","' . $price .'","' .$size. '","' . $gender . '","' . $quantity . '","' . $keyword . '","' .$discount. '","' . $pictureID .'")';
     $message = 'product created';
 

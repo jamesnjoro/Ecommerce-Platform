@@ -5,7 +5,7 @@ function writelog($message){
     $string = $message ." " . date('Y-M-D h:i:sa'). "\n";
     fwrite($file,$string);
     fclose($file);*/
-    echo $message;
+    $message;
 }
 
 ?>

@@ -23,6 +23,7 @@
    <div class="sidenav">
        <a id="clsBtn" onclick="collapse()">&times</a>
        <h1 id="sideHeading"> Admin </h1>
+       <a id ="exp" onclick='exp()'><i class="fas fa-chevron-right"></i></a>
        <div class="links">
            
                 <div class="items active" onclick="dashboard()" id="dashboard">
@@ -44,6 +45,8 @@
                 <i class="fas fa-shopping-bag"></i>
                 <span class="it"><a>Products</a></span>
                 </div>
+                
+                
         </div>
     </div>
 
@@ -105,22 +108,22 @@
             </div>
             <div class="topP">
                 <h1>Top Products</h1>
-                <ul>
-                    <li>
+                <div>
+                    <div>
                         <div class="pp">
                             <img src="photos/todo.png" alt="testing">
                             <span>Name of product</span>
                             <span>Prices of product<span>
                         </div>
-                    </li>
-                    <li>
+        </div>
+                    <div>
                         <div class="pp">
                             <img src="photos/todo.png" alt="testing">
                             <span>Name of product</span>
                             <span>Prices of product<span>
                         </div>
-                    </li>
-                </ul>
+        </div>
+        </div>
 
             </div>
        
@@ -133,29 +136,17 @@
             <table id="usersT">
             <tr>
                 <th>Name</th>
-                <th>Email</th>
                 <th>Phone Number</th>
-                <th>Gender</th>
-                <th>Town</th>
-                <th>City</th>
                 <th>Orders<th>
             </tr>
             <tr>
                 <td>James Njoroge</td>
-                <td>jnjoroge501@gmail.com</td>
                 <td>0721544707</td>
-                <td>Male</td>
-                <td>Nairobi</td>
-                <td>Kahawa west</td>
                 <td>10</td>
             </tr>
             <tr>
                 <td>James Njoroge</td>
-                <td>jnjoroge501@gmail.com</td>
                 <td>0721544707</td>
-                <td>Male</td>
-                <td>Nairobi</td>
-                <td>Kahawa west</td>
                 <td>10</td>
             </tr>
             </table>
@@ -166,21 +157,18 @@
             <table id="usersT">
             <tr>
                <th>Order No</th>
-               <th>Email</th>
                <th>Phone Number</th>
                <th>Amount</th>
                <th>Status</th>
             </tr>
             <tr>
                 <td>1</td>
-                <td>jnjoroge501@gmail.com</td>
                 <td>0721544707</td>
                 <td>1500</td>
                 <td>Shipping</td>
             </tr>
             <tr>
                 <td>1</td>
-                <td>jnjoroge501@gmail.com</td>
                 <td>0721544707</td>
                 <td>1500</td>
                 <td>Shipping</td>
@@ -268,10 +256,10 @@
                         </select>
                     </div>
                     <div class="Det">
-                        <span>Gender</span>
+                        <span>Age</span>
                         <select type="text" name="ProductG" id="ProductG">
-                        <option value="male">male</option>
-                        <option value="female">female</option>
+                        <option value="children">children</option>
+                        <option value="grown ups">grown ups</option>
                         </select>
                     </div>
                     <div class="Det">
@@ -301,7 +289,7 @@
                     
              </div>
             
-               <input type="submit" value="submit">
+               <input type="submit" value="submit" id ="submit">
            </form>
        </div>
    </div>

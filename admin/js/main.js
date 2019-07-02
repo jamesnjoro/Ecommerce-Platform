@@ -10,6 +10,17 @@ function collapse(){
     $('#clsBtn').css('display','none');
     $('#sideHeading').css('font-size','15px');
     $('.links i').css('padding-left','20px');
+    $('#exp').css('display','block');
+}
+
+function exp(){
+    $(".sidenav").css('width','250px');
+    $('.container').css('margin-left','250px');
+    $('.it').css('display','');
+    $('#clsBtn').css('display','block');
+    $('#sideHeading').css('font-size','20px');
+    $('.links i').css('padding-left','20px');
+    $('#exp').css('display','none');
 }
 
 function dashboard(){

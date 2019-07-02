@@ -41,7 +41,7 @@
         subcategory VARCHAR(30),
         price INT UNSIGNED NOT NULL,
         size INT UNSIGNED,
-        gender VARCHAR(10) NOT NULL,
+        age VARCHAR(10) NOT NULL,
         quantity INT UNSIGNED NOT NULL,
         keyword VARCHAR(100) NOT NULL,
         discount INT UNSIGNED,
