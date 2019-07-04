@@ -43,7 +43,7 @@
                             <li><a href="login/logout.php">Logout</a></li>
                         </ul>';
                     }else{
-                        echo '<span> <a href="login/">Login</a></span>';
+                        echo '<span> <a href="login/index.php">Login</a></span>';
                     }
                 ?>
 

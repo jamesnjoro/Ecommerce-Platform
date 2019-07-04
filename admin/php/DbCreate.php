@@ -85,10 +85,12 @@ $sql = 'CREATE TABLE orders(
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(50) NOT NULL,
     time TIMESTAMP,
+    phone int(40)   NOT NULL,
     county VARCHAR(30) NOT NULL,
     subcounty VARCHAR(30) NOT NULL,
     city VARCHAR(30) NOT NULL,
-    address VARCHAR(100) NOT NULL
+    address VARCHAR(100) NOT NULL,
+    status VARCHAR(30) NOT NULL
 )';
 
 if($conn->query($sql) === TRUE){

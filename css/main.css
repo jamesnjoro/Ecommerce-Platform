@@ -167,7 +167,10 @@ nav a{
 }
 #hes{
     background-color: rgb(212, 103, 103);
-    border-radius: 40px;
+    border-radius: 50%;
+    border: 0.5px white solid;
+    height: 10px;
+    width: 10px;
     font-size: 12px;
     padding:2px;
     margin-left:-12px;
@@ -310,7 +313,10 @@ footer{
     }
     #hesab{
         background-color: rgb(212, 103, 103);
-        border-radius: 40px;
+        border-radius: 50%;
+        border: 0.5px white solid;
+        height: 10px;
+        width: 10px;
         font-size: 10px;
         padding:2px;
         margin-left:-6px;

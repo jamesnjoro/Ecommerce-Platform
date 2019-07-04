@@ -55,8 +55,8 @@
             </div>
         </div>
         <div class="bottomNav">
-           <div><i class="fas fa-home"></i><span><br> <a href="#home">Home</a> </span></div> 
-            <div><i class="fas fa-shopping-bag"></i><span><br> <a href="#products">Products</a> </span></div>
+           <div><i class="fas fa-home"></i><span><br> <a href="../index.php">Home</a> </span></div> 
+            <div><i class="fas fa-shopping-bag"></i><span><br> <a href="../index.php#products">Products</a> </span></div>
             <div class='cartT'><i class="fas fa-shopping-cart"><span id="hesab" class='num' >
             <?php
                     if(isset($_COOKIE['itemsNum'])){
@@ -75,7 +75,7 @@
     <?php
 if(isset($_COOKIE['shoppingCart'])){
     ?>
-    <div class="grid">
+    <div id="h" class="grid">
         <span>Item</span>
         <span>Price</span>
         <span>Quantity</span>
@@ -88,6 +88,7 @@ if(isset($_COOKIE['shoppingCart'])){
     $name = $values['name'];
     $pic = $values['pic'];
     $price = $values['price'];
+    $id = $values['id'];
 ?>
 
 
@@ -96,9 +97,9 @@ if(isset($_COOKIE['shoppingCart'])){
             <span class="pic"><img src="../admin/photos/<?php echo $pic;?>"></span>
             <span class="name"><?php echo $name;?></span>
         </div>
-        <div><?php echo $price;?></div>
+        <div class="p"><?php echo $price;?></div>
         <div>
-        <select name="Quantity" id="">
+        <select onchange="sum()" name="Quantity" class="quantity">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -113,14 +114,32 @@ if(isset($_COOKIE['shoppingCart'])){
             <option value="12">12</option>
         </select> 
         </div>
-        <div class="del">&times</div>
+        <input type="hidden" name="id" class="id" value="<?php echo $id;?>">
+        <div class="del"><a href="addto.php?action=delete&id=<?php echo $id;?>">&times</a></div>
+        
         
     </div>
+       
+
+
     <?php } 
+
+
+?> 
+            <div class="total">
+            <span><b>Totals</b>:</span>
+            <span ><b id="value">12343445</b></span>
+            <div id="dis">shipping fees not included</div>
+            </div>
+  
+            <a id="check" href="checkout.php"> checkout</a>
+<?php
 }else{
-echo "No items have been added to cart";
+echo "<span style='text-align:center;'>No items have been added to cart<span>";
 }
 ?>
 </div>
+<script src="../js/jquery.js"></script>
+<script src="main.js"></script>
 </body>
 </html>

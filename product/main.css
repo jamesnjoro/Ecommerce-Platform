@@ -82,95 +82,41 @@ nav a{
     color:white;
     border: 0.5px white solid;
 }
-.cart{
+.container{
     margin:100px auto 20px;
+    width: 80%;
 }
 
-
-.grid{
+.prod{
     display: grid;
-    width: 70%;
-    margin: auto;
-    grid-template-columns: 3fr 1fr 1fr 0.5fr;
-    margin-bottom: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    grid-template-columns: 1fr 1fr;
 }
-.grid div{
-    height: 70px;
+
+.prod img{
+    width: 100%;
+}
+.detail{
+    display: inline-block;
+}
+
+.image{
+    max-height: 400px;
+    min-height: 300px;
+    width: auto;
     background-color: white;
-    line-height:70px;
-    
-}
-#h{
-    box-shadow: 0 0px 0px 0;
-}
-.grid img{
-    height: 30px;
-    width: 50px;
-    vertical-align: middle;
-    margin-left: 10px;
-    margin-right: 20px;
 }
 
-.del{
-    text-align: end;
-    padding-right: 10px;
-    font-size: 25px;
-    
-}
-.del a{
-    text-decoration: none;
-}
-
-.total{
-    width:70%;
-    margin: auto;
-    text-align: end;
-    margin-top: 40px;
-    border-top: 1px black solid;
-    padding-top: 10px;
-}
-.total span{
-    font-size: 17px;
-    padding-left:20px;
-}
-
-#value{
-    color: red;
-    font-size: 20px;
-}
-#dis{
-    font-size: 13px;
-    margin-bottom: 60px; 
-}
-
-#check{
-    position: relative;
-    text-decoration: none;
-    color:black;
-    left:40%;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.185);
-    border: 1px black solid;
-    transition-duration: 1s;
-}
-
-#check:hover{
-    background-color: red;
-
-}
 
 @media only screen and (max-width: 600px) {
 
-    .grid{
-        width: 90%;  
+    .prod{
+        display: grid;
+        grid-template-columns: 1fr;
     }
-    .cart{
+    .container{
         margin: 20px auto 20px;
     }
-    footer{
-        display: none;
-    }
+
     nav,#user{
         display: none; 
     }
@@ -237,6 +183,14 @@ nav a{
 
 
 @media only screen and (min-width: 600px) {
+    .detail{
+        padding-left: 40px;
+        line-height: 50px;
+    }
+    .prod{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
     .navbar{
         display: grid;
         grid-template-columns: 1fr 2fr 1fr;
@@ -281,6 +235,14 @@ nav a{
     
 }
 @media only screen and (min-width: 768px) {
+    .prod{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .detail{
+        padding-left: 40px;
+        line-height: 50px;
+    }
     .navbar{
         display: grid;
         grid-template-columns: 1fr 2fr 1fr;
@@ -322,6 +284,14 @@ nav a{
 }
 
 @media only screen and (min-width: 992px) {
+    .detail{
+        padding-left: 40px;
+        line-height: 50px;
+    }
+    .prod{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
     .navbar{
         display: grid;
         grid-template-columns: 2fr 2fr 1fr;
@@ -361,6 +331,14 @@ nav a{
 }
 
 @media only screen and (min-width: 1200px) {
+    .detail{
+        padding-left: 40px;
+        line-height: 50px;
+    }
+    .prod{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
     .navbar{
         display: grid;
         grid-template-columns: 2fr 2fr 1fr;
