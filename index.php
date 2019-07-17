@@ -7,7 +7,7 @@
     <title>Groundz clothes</title>
     <link rel="stylesheet" href="awesomefont/css/all.css">
     <link rel="stylesheet" href="css/main.css">
-    <title>Document</title>
+    <title>Next Collections</title>
 </head>
 <body>
     <header>
@@ -39,7 +39,6 @@
                     if(isset($_SESSION['email'])){
                         echo '<span>'.$_SESSION['user'].'</span><i class="fas fa-caret-down" style="font-size: 10px;padding-left: 5px;"></i></i>
                         <ul id="c">
-                            <li>View Orders</li>
                             <li><a href="login/logout.php">Logout</a></li>
                         </ul>';
                     }else{
@@ -67,7 +66,21 @@
                     }
                 ?>
             </span></i><span><br><a class="cartbtn">Cart</a></span>  </div>
-            <div><i class="fas fa-user"></i><span><br>User</span></div>
+            <div><i class="fas fa-user"></i><span><br>
+            <?php
+                    
+
+                    if(isset($_SESSION['email'])){
+                        echo '<span><a href="login/logout.php">Logout</a></span>';
+                      
+                    }else{
+                        echo '<span> <a href="login/index.php">Login</a></span>';
+                    }
+                ?>
+        
+        
+        
+        </span></div>
         </div>
     </header >
         <div class="carosel" id="home">

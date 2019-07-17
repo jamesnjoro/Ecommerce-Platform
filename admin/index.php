@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Groundz clothes</title>
+    <title>Next Collections</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="../awesomefont/css/all.css">
     
@@ -81,7 +81,19 @@
                 <div class="menu" id="three">
                     <div>
                         <i class="fas fa-shopping-bag"></i>
-                        <span><h2>100</h2></span>
+                        <span><h2>
+                        <?php
+                        include("php/common.php");
+                        include("php/config.php");
+                        
+                        $sql = "SELECT * FROM products";
+                        $results = $conn->query($sql);
+                        
+                        echo $results->num_rows;
+                        
+                        ?>
+                        
+                        </h2></span>
                         <span><h3>Products</h3></span>
                     </div>
                     
@@ -91,7 +103,18 @@
                 <div class="menu" id="one">
                     <div>
                         <i class="fas fa-shopping-cart"></i>
-                        <span><h2>100</h2></span>
+                        <span><h2>
+                        
+                        <?php
+                            $sql = "SELECT * FROM orders";
+
+                            $result = $conn->query($sql);
+
+                            echo $result->num_rows;
+                        
+                        ?>
+                        
+                        </h2></span>
                         <span><h3>Orders</h3></span>
                     </div>
                     
@@ -99,7 +122,16 @@
                 <div class="menu" id="two">
                     <div>
                         <i class="fas fa-users"></i>
-                        <span><h2>100</h2></span>
+                        <span><h2>
+                        
+                        <?php
+                        $sql = 'SELECT * FROM users';
+                        $result = $conn->query($sql);
+                        echo $result->num_rows
+                        
+                        ?>
+                        
+                        </h2></span>
                         <span><h3>Users</h3></span>
                     </div>
                     
@@ -108,25 +140,39 @@
             </div>
             <div class="topP">
                 <h1>Top Products</h1>
-                <div>
-                    <div>
-                        <div class="pp">
-                            <img src="photos/todo.png" alt="testing">
-                            <span>Name of product</span>
-                            <span>Prices of product<span>
+                <?php
+                 $sql = "SELECT * FROM products";
+                 $results = $conn->query($sql);
+                 if($results->num_rows > 0){
+                    while($row = $results->fetch_assoc()){
+                        $photoId = $row['pictureID'];
+                      $sql2 = "SELECT * FROM photos WHERE productID ='".$photoId."'";
+                      $results2 = $conn->query($sql2);
+                        if($results2->num_rows>0){
+                            while($row2 = $results2->fetch_assoc()){
+                                $pic = $row2['photopath'];
+                                break;
+                            }
+                        }
+                    ?>
+                        <div>
+                        <div>
+                            <div class="pp">
+                                <img src="photos/<?php echo $pic;?>" alt="testing">
+                                <span><?php echo $row['productName'];?></span>
+                                <span><?php echo $row['price'];?><span>
+                            </div>
                         </div>
-        </div>
-                    <div>
-                        <div class="pp">
-                            <img src="photos/todo.png" alt="testing">
-                            <span>Name of product</span>
-                            <span>Prices of product<span>
-                        </div>
-        </div>
-        </div>
-
+                       
+                    </div>
+                <?php
+                    }
+                }
+                ?>
+               
+                       
             </div>
-       
+                    
         </div>
    
    
@@ -136,19 +182,40 @@
             <table id="usersT">
             <tr>
                 <th>Name</th>
-                <th>Phone Number</th>
+                <th>Email</th>
                 <th>Orders<th>
             </tr>
-            <tr>
-                <td>James Njoroge</td>
-                <td>0721544707</td>
-                <td>10</td>
-            </tr>
-            <tr>
-                <td>James Njoroge</td>
-                <td>0721544707</td>
-                <td>10</td>
-            </tr>
+                <?php
+                    $sql = 'SELECT * FROM users';
+                    $result = $conn->query($sql);
+                    $sql = 'SELECT * FROM orders';
+                    $result2 = $conn->query($sql);
+                    $order = 0;
+
+                    if($result->num_rows>0){
+                        while($row = $result->fetch_assoc()){
+                            $order = 0;
+                            if($result2->num_rows>0){
+                                while($rows2 = $result2->fetch_assoc()){
+                                    if($row['email']==$rows2['email']){
+                                        $order++;
+                                    }
+                                }
+                            }
+
+
+
+                        ?>
+                <tr>
+                <td><?php echo $row['Name']?></td>
+                <td><?php echo $row['email']?></td>
+                <td><?php echo $order?></td>
+                </tr>
+                <?php
+
+                        }
+                    }else{echo "no users registered";}
+                ?>
             </table>
        </div>
 
@@ -161,19 +228,80 @@
                <th>Amount</th>
                <th>Status</th>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>0721544707</td>
-                <td>1500</td>
-                <td>Shipping</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>0721544707</td>
-                <td>1500</td>
-                <td>Shipping</td>
-            </tr>
+
+            <?php
+            $sql = "SELECT * FROM orders";
+            $result = $conn->query($sql);
+
+            if($result->num_rows>0){
+                while($row = $result->fetch_assoc()){
+
+
+
+                    ?>
+
+                <tr class="ord">
+                <td class="orderID"><?php echo $row['id'];?></td>
+                <td>0<?php echo $row['phone'];?></td>
+                <td><?php echo $row['amount'];?></td>
+                
+                <?php
+                 if($row['status']== 'Being Processed'){
+                     ?>
+                <td> 
+                    <select name="status" class="status">
+                    <option  value="Being Processed">Being Processed</option>
+                    <option  value="In Transit">In Transit</option>
+                    <option value="Fulfilled">Fulfilled</option>
+                    <option value="Cancelled">Cancelled</option>
+                    </select></td>
+                </tr>
+                <?php
+                 }if($row['status']== 'In Transit'){
+                    ?>
+                    <td> 
+                    <select name="status" class="status">
+                    <option  value="Being Processed">Being Processed</option>
+                    <option selected value="In Transit">In Transit</option>
+                    <option value="Fulfilled">Fulfilled</option>
+                    <option value="Cancelled">Cancelled</option>
+                    </select></td>
+                </tr>
+                <?php
+                 }if($row['status']== 'Fulfilled'){
+                    
+                    ?>
+                    <td> 
+                    <select name="status" class="status">
+                    <option  value="Being Processed">Being Processed</option>
+                    <option  value="In Transit">In Transit</option>
+                    <option selected value="Fulfilled">Fulfilled</option>
+                    <option value="Cancelled">Cancelled</option>
+                    </select></td>
+                </tr>
+                    <?php
+                 }if(($row['status']== 'Cancelled')){
+                     ?>
+                    <td> 
+                    <select name="status" ="status">
+                    <option  value="Being Processed">Being Processed</option>
+                    <option  value="In Transit">In Transit</option>
+                    <option  value="Fulfilled">Fulfilled</option>
+                    <option selected value="Cancelled">Cancelled</option>
+                    </select></td>
+                </tr>
+
+                <?php
+                 }
+                    
+                ?>
+               
+
+            <?php
+                }
+            }
             
+            ?> 
             </table>
        </div>
 
@@ -188,7 +316,7 @@
                
             </tr>
             <?php
-            include("php/common.php");
+            
             include("php/config.php");
             
               $sql = "SELECT * FROM products";
@@ -209,10 +337,11 @@
                           }
                       }
                     echo "<tr><td><img id='pro' src='photos/".$pic."'/></td>
+                    <input type='hidden' name='id' class='Pid' value='".$row['id']."'>
                     <td>".$row['productName']."</td>
                     <td>".$row['price']."</td>
                     <td>".$row['quantity']."</td>
-                    <td><i class='fas fa-trash-alt'></i></td></tr>";
+                    <td class='dele'><i class='fas fa-trash-alt'></i></td></tr>";
                   }
               }else{
                   echo "no results";

@@ -1,4 +1,4 @@
-    startup();
+startup();
 const modal = document.getElementById('modal');
 const cls = document.getElementById('cls');
 cls.addEventListener('click',modalD);
@@ -82,4 +82,43 @@ function modalD(){
 function modalA(){
     modal.style.display="block";
 }
+
+var stat = document.querySelectorAll('.status');
+
+stat.forEach(function(value,index){
+    value.addEventListener('change',function(){
+        xhr = new XMLHttpRequest();
+        var id = document.querySelectorAll('.orderID')[index].innerHTML;
+        xhr.open('GET','php/orderupdate.php?action=updateStatus&id='+id +'&status='+value.value,true);
+        xhr.load = function(){
+            console.log(this.response);
+        }
+
+        xhr.send();
+        alert('status changed');
+    });
+    
+});
+
+var ord = document.querySelectorAll('.ord');
+
+ord.forEach(function(value,index){
+    value.addEventListener('click',function(){
+        var id = document.querySelectorAll('.orderID')[index].innerHTML;
+        window.location.replace('order/order.php?action=viewOrder&id='+id);
+    });
+});
+
+var dele = document.querySelectorAll('.dele');
+
+dele.forEach(function(value,index){
+    value.addEventListener('click', function(){
+        var id = document.querySelectorAll('.Pid')[index].value;
+        xhr = new XMLHttpRequest();
+        xhr.open("GET","php/delete.php?action=deleteProduct&id="+id,true);
+        xhr.send();
+        window.location.reload();
+    });
+});
+    
 

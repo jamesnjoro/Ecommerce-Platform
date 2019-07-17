@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    line-height: 1.8em;
+}
+
+body{
+    background-color:rgb(226, 237, 247);
+}
+.details, .list{
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+h1{
+    text-align: center;
+    border: 1px solid rgb(168, 157, 157);
+    margin-top: 20px;
+}
+
+.details div{
+    display: flex;
+    flex-direction: column;
+}
+
+.product{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.product img{
+    height: 80px;
+    width: 100px;
+}
+.list{
+    padding: 10px;
+    border: 1px rgb(168, 157, 157) solid;
+   
+}
+
+.list div{
+    margin-bottom: 20px;
+}
+
+#return{
+    margin: 20px;
+    
+}
+
+@media only screen and (max-width: 600px) {
+    .container{
+        width:90%;
+        margin: auto;
+        text-align: start;
+    }
+    .details{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        border: 1px rgb(168, 157, 157) solid;
+        padding: 20px;
+    }
+   
+}
+
+
+@media only screen and (min-width: 600px) {
+    .container{
+        width:90%;
+        margin: auto;
+        text-align: start;
+    }
+    .details{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        border: 1px rgb(168, 157, 157) solid;
+        padding: 20px;
+    }
+    
+  
+    
+}
+@media only screen and (min-width: 768px) {
+    .container{
+        width:80%;
+        margin: auto;
+        text-align: start;
+    }
+    .details{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        border: 1px rgb(168, 157, 157) solid;
+        padding: 20px;
+    }
+    
+   
+}
+
+@media only screen and (min-width: 992px) {
+    .container{
+        width:80%;
+        margin: auto;
+        text-align: start;
+    }
+    .details{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        border: 1px rgb(168, 157, 157) solid;
+        padding: 20px;
+    }
+    
+   
+}
+
+@media only screen and (min-width: 1200px) {
+    .container{
+        width:80%;
+        margin: auto;
+        text-align: start;
+    }
+    .details{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        border: 1px rgb(168, 157, 157) solid;
+        padding: 20px;
+    }
+    
+    
+}

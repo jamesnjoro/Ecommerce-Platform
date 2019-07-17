@@ -19,7 +19,7 @@
                 'name' => $_POST['hidden_name'],
                 'price' => $_POST['hidden_price'],
                 'pic' => $_POST['hidden_pic'],
-                'quantity' => 0
+                'quantity' => 1
     
             );
             $cart[] = $items;
@@ -84,25 +84,42 @@
         $city = $_POST['city'];
         $address = $_POST['Address'];
         $status = "Being Processed";
-
-        session_start();
-        $email = $_SESSION['email'];
-
-        $sql = 'INSERT INTO orders (phone,email,county,subcounty,city,address,status) VALUES
-        ("'.$phone.'","'.$email.'","'.$county.'","'.$subcounty.'","'.$city.'","'.$address.'","'.$status.'")';
-        
         include('../admin/php/common.php');
         include('../admin/php/config.php');
+        session_start();
+        $email = $_SESSION['email'];
+       
+       
+        $final = stripslashes($_COOKIE['shoppingCart']);
+        $finalcart = json_decode($final,true);
+        $amount = 0;
+        
 
+        $prod = $conn->query("SELECT * FROM products");
+        while($row = $prod->fetch_assoc()){
+        foreach($finalcart as $keys => $value){
+                if($row['id']== $value['id']){
+                    $amount = $amount + ($row['price'] * $value['quantity']);
+                }
+                else{
+                   
+                }
+            }
+        }
+        
+
+        $sql = 'INSERT INTO orders (phone,email,county,subcounty,city,address,status,amount) VALUES
+        ("'.$phone.'","'.$email.'","'.$county.'","'.$subcounty.'","'.$city.'","'.$address.'","'.$status.'","'.$amount.'")';
+        
+      
+        
         if($conn->query($sql)=== true){
             echo  "successfully saved";
         }else{
             echo $conn->error;
         }
+        
         $id = mysqli_insert_id($conn);
-        $final = stripslashes($_COOKIE['shoppingCart']);
-        $finalcart = json_decode($final,true);
-
         foreach($finalcart as $keys => $values){
             $sql = "INSERT INTO suborders (orderID,productID,quantity)
             VALUES('".$id."','".$values['id']."','".$values['quantity']."')";
@@ -114,6 +131,7 @@
         }
         echo 'everything a okay';
         setcookie('shoppingCart','non',time()-3600,'/');
+        $conn->close();
         
 
     }
