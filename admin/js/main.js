@@ -121,4 +121,36 @@ dele.forEach(function(value,index){
     });
 });
     
+$(function(){
+    var removeLink = ' <a class="remove" href="#" onclick="$(this).parent().slideUp(function(){ $(this).remove() }); return false">remove</a>';
+     
+    $('a.clon').relCopy({ append: removeLink});
+    });
 
+    $(document).ready(function(){
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function(){
+            if (this.readyState == 4 && this.status == 200){
+                $('.products').html(this.responseText);
+            }
+        }
+        xhr.open('GET','products/viewp.php?page=1',true);
+        xhr.send();
+    })
+
+  $(document).on('click','.pagenum', function(){
+      var page = $(this).attr('id');
+      var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function(){
+            if (this.readyState == 4 && this.status == 200){
+                $('.products').html(this.responseText);
+            }
+        }
+        xhr.open('GET','products/viewp.php?page=' +page,true);
+        xhr.send();
+  })
+
+  $(document).on('click','.productRow',function(){
+      alert($(this).attr('id'));
+  })
+    

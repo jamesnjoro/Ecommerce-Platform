@@ -94,7 +94,7 @@ h1{
 }
 
 .ord:hover{
-    background-color: beige;
+    background-color: pointerbeige;
     cursor: pointer;
 }
 .menu{
@@ -192,7 +192,7 @@ h1{
 #modalContent{
     background-color: white;
     width:70%;
-    margin: 10% auto;
+    margin: 5% auto;
     padding: 10px;
 }
 
@@ -213,7 +213,7 @@ h1{
     cursor: pointer;
 }
 
-#details{
+#details,.clone{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-row-gap: 20px;
@@ -224,6 +224,7 @@ h1{
 .Det{
     display: flex;
     flex-direction: column;
+    margin:10px;
 }
 #pic{
     display: grid;
@@ -258,7 +259,32 @@ h1{
     color:black;
     cursor: pointer;
 }
-
+#subH{
+    text-align: center;
+}
+.clone{
+    border: 1px black solid;
+    margin-bottom: 10px;
+    
+}
+#numC{
+    position: absolute;
+    margin: 50px;
+    margin-top: 10px;
+}
+.pagenum{
+    border: 0.5px solid black;
+    padding:10px;
+    background-color: beige;
+    transition-duration: 1s;
+    cursor: pointer;
+}
+.pagenum:hover{
+    background-color: cadetblue;
+}
+.productRow:hover{
+    background-color: rgba(255, 127, 80, 0.356)
+}
 @media only screen and (max-width: 600px) {
     .sidenav{
         width: 60px; 
@@ -288,7 +314,7 @@ h1{
     
     }
 
-    #details{
+    #details,.clone{
         display: grid;
         grid-template-columns: 1fr;
         grid-row-gap: 20px;
@@ -337,7 +363,7 @@ h1{
         margin: 5px;
     }
 
-    #details{
+    #details,.clone{
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-row-gap: 20px;
@@ -363,7 +389,7 @@ h1{
         margin-left: 250px;
     }
    
-    #details{
+    #details,.clone{
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-row-gap: 20px;
@@ -398,7 +424,7 @@ h1{
         
         font-size: 15px;
     }
-    #details{
+    #details,.clone{
         display: grid;
         grid-template-columns: repeat(auto-fit,3,1fr);
         grid-row-gap: 20px;
@@ -433,7 +459,7 @@ h1{
         
         font-size: 15px;
     }
-    #details{
+    #details,.clone{
         display: grid;
         grid-template-columns: repeat(auto-fit,3,1fr);
         grid-row-gap: 20px;

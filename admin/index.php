@@ -15,9 +15,25 @@
     <title>Next Collections</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="../awesomefont/css/all.css">
+    <link rel="stylesheet" href="../AlertJS/alert.css">
     
 </head>
 <body>
+<div class="message">
+        <span id="M">testing out</span>
+        <span id="cancel">&times</span>
+</div>
+    <?php
+        if(isset($_GET['status'])){
+            
+            echo '
+            <script src="../AlertJS/alert.js"></script>
+            <script>
+            showAlert("'.$_GET['message'].'");
+            </script>';
+
+        }
+    ?>
 
       
    <div class="sidenav">
@@ -306,52 +322,22 @@
        </div>
 
        <div class="products">
-            <h1>Products</h1>
-            <table id="usersT">
-            <tr>
-               <th>Image</th>
-               <th>Name</th>
-               <th>Price</th>
-               <th>Stock</th>
-               
-            </tr>
-            <?php
-            
-            include("php/config.php");
-            
-              $sql = "SELECT * FROM products";
-              
 
-              $results = $conn->query($sql);
-              
+      
 
-              if($results->num_rows > 0){
-                  while($row = $results->fetch_assoc()){
-                      $photoId = $row['pictureID'];
-                    $sql2 = "SELECT * FROM photos WHERE productID ='".$photoId."'";
-                    $results2 = $conn->query($sql2);
-                      if($results2->num_rows>0){
-                          while($row2 = $results2->fetch_assoc()){
-                              $pic = $row2['photopath'];
-                              break;
-                          }
-                      }
-                    echo "<tr><td><img id='pro' src='photos/".$pic."'/></td>
-                    <input type='hidden' name='id' class='Pid' value='".$row['id']."'>
-                    <td>".$row['productName']."</td>
-                    <td>".$row['price']."</td>
-                    <td>".$row['quantity']."</td>
-                    <td class='dele'><i class='fas fa-trash-alt'></i></td></tr>";
-                  }
-              }else{
-                  echo "no results";
-              }
 
-                  $conn->close();
-                  writelog("Connection Closed");
+
+
+
             
-            ?> 
-            </table>
+
+
+
+
+
+            
+           
+           
        </div>
    
    </div>
@@ -386,64 +372,97 @@
                     </div>
                     <div class="Det">
                         <span>Age</span>
-                        <select type="text" name="ProductG" id="ProductG">
+                        <select type="text" name="ProductA" id="ProductA">
                         <option value="children">children</option>
                         <option value="grown ups">grown ups</option>
                         </select>
                     </div>
                     <div class="Det">
-                        <span>Price</span>
-                        <input type="text" name="ProductP" id="ProductP">
-                    </div>
-                    <div class="Det">
-                        <span>Discount</span>
-                        <input type="text" name="ProductD" id="ProductD">
-                    </div>
-                    <div class="Det">
-                        <span>Size</span>
-                        <input type="text" name="ProductSi" id="ProductSi">
-                    </div>
-                    <div class="Det">
-                        <span>Quantity</span>
-                        <input type="text" name="ProductQ" id="ProductQ">
+                        <span>Features</span>
+                        <input type="text" name="ProductF" id="ProductF">
                     </div>
                     <div class="Det">
                         <span>Keywords</span>
                         <input type="text" name="ProductK" id="ProductK">
                     </div>
+                </div>
+                    <h2 id="subH">SubProducts</h2>
+                <div id="details" class="clone">
+                    <div class="Det">
+                        <span>Price</span>
+                        <input type="text" name="ProductP[]" class="ProductP">
+                    </div>
+                    <div class="Det">
+                        <span>Discount</span>
+                        <input type="text" name="ProductD[]" class="ProductD">
+                    </div>
+                    <div class="Det">
+                        <span>Size</span>
+                        <select type="text" name="ProductSi[]" id="ProductSi">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        </select>
+                    </div>
+                    <div class="Det">
+                        <span>Color</span>
+                        <input type="text" name="ProductCo[]" class="ProductCo">
+                    </div>
+                    <div class="Det">
+                        <span>Quantity</span>
+                        <input type="text" name="ProductQ[]" class="ProductQ">
+                    </div>
+                   
                     <div id="pic">
                     <span id="files"> Pictures</span>
-                    <input type="file" name="files[]" multiple="">
+                    <input type="file" name="files[]" class="file" multiple="">
                 </div>
                     
              </div>
-            
-               <input type="submit" value="submit" id ="submit">
+             <p><a href="#" rel=".clone" class="clon">Add Subproduct</a></p> 
+             <input type="submit" value="submit" id="submit">
            </form>
        </div>
    </div>
+ 
 <script type="text/javascript">
 
 function validate(){
     var name = document.getElementById("ProductN");
-    var price = document.getElementById("ProductP");
-    var size = document.getElementById("ProductSi");
-    var quantity = document.getElementById("ProductQ");
+    var price = document.querySelectorAll(".ProductP");
+    
+    var quantity = document.querySelectorAll(".ProductQ");
+    var color = document.querySelectorAll(".ProductCo");
     
     var err = document.getElementById("validateerror");
+    err.innerHTML = "";
+    var bool = false;
 
-    if(name.value == ""||price.value == ""||size.value == ""||quantity.value == ""){
-        err.innerHTML = "Fill all required fields";
-        return false
-    }else{
-        return true;
-    }
+    price.forEach(function(value,index){
+            if(name.value == "" || value.value == ""||color[index].value == ""||quantity[index].value == ""){
+                err.innerHTML = "Fill all subproduct required fields";
+                bool = false;
+            }else{
+                err.innerHTML = "okay";
+                bool = true;
+                }
+        });
+
+    var fil = document.querySelectorAll('.file');
+    fil.forEach(function(value,index){
+        value.setAttribute("name","file"+index+"[]");
+    });
+
+    return bool;
 }
+
 </script>
 
 <script src="js/jquery.js"></script>
+<script src="js/refcopy.js"></script>
 <script src="js/main.js"></script>
-
+<script src="../AlertJS/alert.js"></script>
 </body>
 </html>
 

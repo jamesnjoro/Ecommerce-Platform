@@ -39,19 +39,56 @@
         productName VARCHAR(30) NOT NULL,
         category VARCHAR(30) NOT NULL,
         subcategory VARCHAR(30),
-        price INT UNSIGNED NOT NULL,
-        size INT UNSIGNED,
         age VARCHAR(10) NOT NULL,
-        quantity INT UNSIGNED NOT NULL,
-        keyword VARCHAR(100) NOT NULL,
-        discount INT UNSIGNED,
-        pictureID INT(100) UNSIGNED NOT NULL
+        active VARCHAR(4) NOT NULL,
+        features VARCHAR(100) NOT NULL,
+        keywords VARCHAR(100) NOT NULL
     )";
 
     if($conn->query($sql) === TRUE){
         writelog("Product table created successfully");
     }else{
         writelog("Unable to create product table:" . $conn->error );
+    }
+
+    $sql = "CREATE TABLE Subproducts(
+        id INT  UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        productID INT NOT NULL,
+        price INT UNSIGNED NOT NULL,
+        size VARCHAR(2) NOT NULL,
+        color VARCHAR(10) NOT NULL,
+        quantity INT UNSIGNED NOT NULL,
+        discount INT UNSIGNED
+        
+    )";
+
+    if($conn->query($sql) === TRUE){
+        writelog("SubProduct table created successfully");
+    }else{
+        writelog("Unable to create Subproduct table:" . $conn->error );
+    }
+
+    $sql = "CREATE TABLE categories(
+        id INT  UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        Name VARCHAR(30) NOT NULL
+    )";
+
+    if($conn->query($sql) === TRUE){
+        writelog("categories table created successfully");
+    }else{
+        writelog("Unable to create categories table:" . $conn->error );
+    }
+
+    $sql = "CREATE TABLE subcategories(
+        id INT  UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        categoryID INT NOT NULL,
+        category VARCHAR(30) NOT NULL
+    )";
+
+    if($conn->query($sql) === TRUE){
+        writelog("subcategory table created successfully");
+    }else{
+        writelog("Unable to create subcategory table:" . $conn->error );
     }
 
     $sql = 'CREATE TABLE users(
