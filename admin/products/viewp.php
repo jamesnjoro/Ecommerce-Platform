@@ -32,10 +32,10 @@ $recordPage = 10;
                             <input type="hidden" name="id" class="Pid" value="'.$row["id"].'">
                             <td>'.$row["productName"].'</td>
                             <td>sales</td>
-                            <td>
-                                <select>
-                                    <option value="yes">Yes</option>
-                                    <option value="no">No</option>
+                            <td class ="ex">
+                                <select class ="ex">
+                                    <option value="yes" >Yes</option>
+                                    <option value="no" class ="ex">No</option>
                                 </select>
                             </td>
                             </tr>

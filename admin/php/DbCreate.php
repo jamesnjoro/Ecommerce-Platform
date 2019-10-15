@@ -82,7 +82,7 @@
     $sql = "CREATE TABLE subcategories(
         id INT  UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         categoryID INT NOT NULL,
-        category VARCHAR(30) NOT NULL
+        subcategory VARCHAR(30) NOT NULL
     )";
 
     if($conn->query($sql) === TRUE){

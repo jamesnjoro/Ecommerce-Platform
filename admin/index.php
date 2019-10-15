@@ -61,6 +61,11 @@
                 <i class="fas fa-shopping-bag"></i>
                 <span class="it"><a>Products</a></span>
                 </div>
+
+                <div class="items"  onclick="categories()" id="categories">
+                <i class="fas fa-folder-open"></i>
+                <span class="it"><a>Categories</a></span>
+                </div>
                 
                 
         </div>
@@ -339,6 +344,36 @@
            
            
        </div>
+       <div class="categories">
+       
+        <div class="cats">
+        <form id ="cate" class="category">
+            <div class="cat"><input type="text" name="catego" id="catego"></div>
+            <div><span>&#8208;</span></div>
+            <div class="sub">
+            <div  class="subcat" id="subC"><input type="text" class="subcatego" id="subcat" name="subcat[]"></div>
+            <p><a href="#" class="copy" rel=".subcat">Add subcategory</a></p>
+            </div>
+        </form>
+        <button id="addCat" onclick="saveCat()">Add category</button>
+        <div class="categoryList">
+            
+        </div>
+        
+        </div>
+
+
+
+            
+
+
+
+
+
+            
+           
+           
+       </div>
    
    </div>
 
@@ -356,18 +391,21 @@
                     <div class="Det">
                         <span>Category</span>
                         <select type="text" name="ProductC" id="ProductC">
-                        <option value="shirt">shirt</option>
-                        <option value="trouser">trouser</option>
-                        <option value="shoe">shoe</option>
+                        <?php
+                            $sql = 'SELECT * FROM categories';
+                            $result = $conn->query($sql);
+                            while($row = $result->fetch_assoc()){   
+                        ?>
+                        <option value="<?php echo $row['Name']?>" id="<?php echo $row['id']?>"><?php echo $row['Name']?></option>
+                        <?php
+                         }
+                        ?>
                         </select>
                     </div>
                     <div class="Det">
                         <span>Subcategory</span>
                         <select type="text" name="ProductS" id="ProductS">
-                        <option value="none">none</option>
-                        <option value="sweats">Sweats</option>
-                        <option value="kaki">Kaki</option>
-                        <option value="material">Material</option>
+                        
                         </select>
                     </div>
                     <div class="Det">
@@ -426,6 +464,7 @@
        </div>
    </div>
  
+  
 <script type="text/javascript">
 
 function validate(){

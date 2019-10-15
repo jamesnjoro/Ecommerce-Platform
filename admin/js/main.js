@@ -32,10 +32,13 @@ function dashboard(){
     $("#orders").removeClass('active');
     $(".products").hide();
     $("#products").removeClass('active');
+    $(".categories").hide();
+    $("#categories").removeClass('active');
 
 }
 
 function users(){
+    $(".categories").hide();
     $(".dashboard").hide();
     $(".users").show();
     $(".orders").hide();
@@ -44,9 +47,11 @@ function users(){
     $("#users").addClass('active');
     $("#orders").removeClass('active');
     $("#products").removeClass('active');
+    $("#categories").removeClass('active');
 }
 
 function orders(){
+    $(".categories").hide();
     $(".dashboard").hide();
     $(".users").hide();
     $(".orders").show();
@@ -55,9 +60,11 @@ function orders(){
     $("#users").removeClass('active');
     $("#orders").addClass('active');
     $("#products").removeClass('active');
+    $("#categories").removeClass('active');
 }
 
 function products(){
+    $(".categories").hide();
     $(".dashboard").hide();
     $(".users").hide();
     $(".orders").hide();
@@ -66,6 +73,19 @@ function products(){
     $("#users").removeClass('active');
     $("#orders").removeClass('active');
     $("#products").addClass('active');
+    $("#categories").removeClass('active');
+}
+function categories(){
+    $(".categories").show();
+    $(".dashboard").hide();
+    $(".users").hide();
+    $(".orders").hide();
+    $(".products").hide();
+    $("#dashboard").removeClass('active')
+    $("#users").removeClass('active');
+    $("#orders").removeClass('active');
+    $("#products").removeClass('active');
+    $("#categories").addClass('active');
 }
 
 function startup(){
@@ -73,6 +93,7 @@ function startup(){
     $(".users").hide();
     $(".orders").hide();
     $(".products").hide();
+    $(".categories").hide();
 }
 
 function modalD(){
@@ -82,6 +103,7 @@ function modalD(){
 function modalA(){
     modal.style.display="block";
 }
+
 
 var stat = document.querySelectorAll('.status');
 
@@ -151,6 +173,107 @@ $(function(){
   })
 
   $(document).on('click','.productRow',function(){
-      alert($(this).attr('id'));
+      var Pid = $(this).attr('id');
+      window.location.assign('products/index.php?id='+Pid);
   })
+
+  var ex = document.querySelectorAll('.ex');
+
+  ex.forEach(function(value){
+      value.addEventListener('click',function(event){
+          event.preventDefault();
+      })
+  })
+
+var removeLink = ' <a class="remove" href="#" onclick="$(this).parent().slideUp(function(){ $(this).remove() }); return false">remove</a>';
+$('a.copy').relCopy({append: removeLink});
+
+function saveCat(){
+    var xhr = new XMLHttpRequest();
+    var formdate = new FormData();
+    formdate.append('catego', document.getElementById('catego').value);
+    var subcategor = document.querySelectorAll('.subcatego');
+    xhr.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200){
+            if (this.readyState == 4 && this.status == 200){
+                var xhr2 = new XMLHttpRequest();
+                xhr2.onreadystatechange = function(){
+                if (this.readyState == 4 && this.status == 200){
+                    $('.categoryList').html(this.responseText);
+                 }
+                }
+                xhr2.open('GET','php/category.php?list=true',true);
+                xhr2.send();
+                    }
+        }
+    }
+    subcategor.forEach(function(value,index){
+        formdate.append('subcat['+index+']',value.value);
+    })
+    xhr.open('POST','php/category.php',true);
+    xhr.send(formdate);
     
+}
+
+$(document).ready(function(){
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200){
+            $('.categoryList').html(this.responseText);
+        }
+    }
+    xhr.open('GET','php/category.php?list=true',true);
+    xhr.send();
+})
+
+$(document).on('click','.removeCat',function(){
+    var id=$(this).attr('id');
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200){
+        var xhr2 = new XMLHttpRequest();
+        xhr2.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200){
+            $('.categoryList').html(this.responseText);
+         }
+        }
+        xhr2.open('GET','php/category.php?list=true',true);
+        xhr2.send();
+            }
+    }
+    xhr.open('GET','php/category.php?action=delete&id='+id,true);
+    xhr.send();
+})
+
+    $("select#ProductC").change(function(){
+        var id = $(this).children("option:selected").attr('id');
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function(){
+            if (this.readyState == 4 && this.status == 200){
+                $('#ProductS').html(this.responseText);
+                console.log(this.responseText);
+            }
+        }
+        xhr.open('GET','php/category.php?listSub=true&id='+id,true);
+        xhr.send();
+    });
+
+$(document).ready(function(){
+        var id = $("#ProductC option:selected").attr('id');
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function(){
+            if (this.readyState == 4 && this.status == 200){
+                $('#ProductS').html(this.responseText);
+                console.log(this.responseText);
+            }
+        }
+        xhr.open('GET','php/category.php?listSub=true&id='+id,true);
+        xhr.send();
+});
+
+
+
+
+
+
+
