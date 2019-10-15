@@ -77,3 +77,14 @@ $(document).ready(function(){
       } // End if
     });
   });
+
+  $(document).ready(function(){
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200){
+            $('#product').html(this.responseText);
+        }
+    }
+    xhr.open('GET','product/viewProducts.php',true);
+    xhr.send();
+})

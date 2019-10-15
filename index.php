@@ -101,9 +101,20 @@
                     </div>
                     <div>
                         <a href="" class="others">All</a>
-                        <a href="" class="others">Shoes</a>
-                        <a href="" class="others">Trousers</a>
-                        <a href="" class="others">Shirts</a>
+                        
+                        <?php
+                            include("admin/php/common.php");
+                            include("admin/php/config.php");
+                            $sql = "SELECT * FROM categories";
+
+                            $result = $conn->query($sql);
+
+                            if($result->num_rows > 0){
+                                while($row = $result->fetch_assoc()){
+                                    echo '<a href="" class ="other">'.$row["Name"].'</a>';
+                                }
+                            }
+                        ?>
                         
                     </div>
                     
@@ -113,104 +124,11 @@
                 </div>
             </div>
             
-            <div class="products">
-                <ul>
-                <?php
-                     include("admin/php/common.php");
-                     include("admin/php/config.php");
-                     $sql = "SELECT * FROM products";
-                     
-       
-                     $results = $conn->query($sql);
-                     
-       
-                     if($results->num_rows > 0){
-                         while($row = $results->fetch_assoc()){
-                             $photoId = $row['pictureID'];
-                           $sql2 = "SELECT * FROM photos WHERE productID ='".$photoId."'";
-                           $results2 = $conn->query($sql2);
-                             if($results2->num_rows>0){
-                                 while($row2 = $results2->fetch_assoc()){
-                                     $pic = $row2['photopath'];
-                                     break;
-                                 }
-                             }
-                           echo "<li>
-                           <form method='post' action='cart/addto.php'>
-                                <div  style ='margin-bottom:20px;  padding-bottom:10px; border-bottom:1px black solid' id='pro'>
-                        <div><img src='admin/photos/". $pic ."'></div>
-                           <div id='Pname'><b>".$row['productName']."</b></div>
-                           <div id='Pprice'>".$row['price']."</div>
-                                </div>
-                           <input type='hidden' name='hidden_price' class='hidden_price' value='".$row['price']."' />
-                           <input type='hidden' name='hidden_name' class='hidden_name' value='".$row['productName']."' />
-                           <input type='hidden' name='hidden_id' class='hidden_id' value='".$row['id']."' />
-                           <input type='hidden' name='hidden_pic' class='hidden_pic' value='".$pic."' />
-                        
-                           <input style ='padding-bottom:20px;' type='submit' name='add_to_cart' class='addto' value ='Add to cart' />
-                           </form>
-                       </li>";
-                         }
-                     }else{
-                         echo "no results";
-                     }
-       
-                         $conn->close();
-                         writelog("Connection Closed");
-
-                ?>
-                </ul>
+            <div class="products" id="product">
+                
             </div>
             <div style ="margin-bottom:20px;"class="products">
-                <span style='text-align:center; padding: 10px 10px 10px 10px'><h1>Hot Products</h1></span>
-                <ul>
-                <?php
-                     
-                     include("admin/php/config.php");
-                   
-                     $sql = "SELECT * FROM products";
-                     
-       
-                     $results = $conn->query($sql);
-                     
-       
-                     if($results->num_rows > 0){
-                         while($row = $results->fetch_assoc()){
-                             $photoId = $row['pictureID'];
-                           $sql2 = "SELECT * FROM photos WHERE productID ='".$photoId."'";
-                           $results2 = $conn->query($sql2);
-                             if($results2->num_rows>0){
-                                 while($row2 = $results2->fetch_assoc()){
-                                     $pic = $row2['photopath'];
-                                     break;
-                                 }
-                             }
-                           echo "<li>
-                           <form method='post' action='cart/addto.php'>
-                           <form method='post' action='cart/addto.php'>
-                           <div style ='margin-bottom:20px;  padding-bottom:10px; border-bottom:1px black solid' id='pro'>
-                            <div><img src='admin/photos/". $pic ."'></div>
-                            <div id='Pname'><b>".$row['productName']."</b></div>
-                             <div id='Pprice'>".$row['price']."</div>
-                           </div>
-                           <input type='hidden' name='hidden_price' class='hidden_price' value='".$row['price']."' />
-                           <input type='hidden' name='hidden_name' class='hidden_name' value='".$row['productName']."' />
-                           <input type='hidden' name='hidden_id' class='hidden_id' value='".$row['id']."' />
-                           <input type='hidden' name='hidden_pic' class='hidden_pic' value='".$pic."' />
-                        
-                           <input style ='padding-bottom:20px;' type='submit' name='add_to_cart' class='addto' value ='Add to cart' />
-                           </form>
-                       </li>";
-                         }
-                     }else{
-                         echo "no results";
-                     }
-       
-                         $conn->close();
-                         writelog("Connection Closed");
 
-                ?>
-                </ul>
             </div>
         </div>
 
