@@ -105,6 +105,10 @@ nav a{
    
 }
 
+.others:hover{
+    background-color: rgb(233, 200, 187);
+}
+
 .sub{
     text-align: end;
     padding-right: 20px;

@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="../awesomefont/css/all.css">
+    <link href="src/jquery.exzoom.css" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -73,16 +74,153 @@
         <div class="container">
             <div class="prod">
                 <div class="image">
-                    <img src="../admin/photos/todo.png" alt="">
+                <div class="exzoom" id="exzoom">
+                    <!-- Images -->
+                    <div class="exzoom_img_box">
+                        <ul class='exzoom_img_ul'>
+                    <?php
+
+                    if(isset($_GET['id'])){
+
+                    
+                        include("../admin/php/common.php");
+                        include("../admin/php/config.php");
+                        
+
+                        $sql = "SELECT * FROM products WHERE id=".$_GET['id'];
+                        $results = $conn->query($sql);
+                        if($results->num_rows>0){
+                            while($row = $results->fetch_assoc()){
+                                $ProductId = $row['id'];
+                                $ProductName = $row['productName'];
+                                if(isset($_GET['subId'])){
+                                    $sql3 = "SELECT * FROM Subproducts WHERE productID ='".$ProductId."'";
+                                    $results3 = $conn->query($sql3);
+                                    if($results3->num_rows > 0){
+                                        while($row3 = $results3->fetch_assoc()){
+                                            if($row3['id'] == $_GET['subId']){
+                                            $photoId = $row3['id'];
+                                            $price = $row3['price'];
+                                            }
+                                            
+                                }
+                                    }
+                                    
+
+                                }else{
+                                    $sql3 = "SELECT * FROM Subproducts WHERE productID ='".$ProductId."'LIMIT 0,1 ";
+                                    $results3 = $conn->query($sql3);
+                                    if($results3->num_rows > 0){
+                                    while($row3 = $results3->fetch_assoc()){
+                                        $photoId = $row3['id'];
+                                        $price = $row3['price'];
+                                       
+                            }
+                                }
+                                
+                        }
+                        $sql2 = "SELECT * FROM photos WHERE productID ='".$photoId."'";
+                        $results2 = $conn->query($sql2);
+                          if($results2->num_rows>0){
+                              while($row2 = $results2->fetch_assoc()){
+                                  $pic = $row2['photopath'];
+
+                                  ?>
+                                    <li><img src="../admin/photos/<?php echo $pic;?>"/></li>
+                                  <?php
+
+                              }
+                          }
+                          
+
+                        
+                    ?>
+                        
+                       
+
+
+
+                        <?php
+                          }
+                        }
+                        ?>
+                        </ul>
+  </div>
+  <!-- <a href="https://www.jqueryscript.net/tags.php?/Thumbnail/">Thumbnail</a> Nav-->
+  <div class="exzoom_nav"></div>
+  <!-- Nav Buttons -->
+  <p class="exzoom_btn">
+      <a href="javascript:void(0);" class="exzoom_prev_btn"> < </a>
+      <a href="javascript:void(0);" class="exzoom_next_btn"> > </a>
+  </p>
+</div>
                 </div>
                 <div class="detail">
-                    <div class="name"><b>Italian shoe</b></div>
-                    <div class="description">Its is a type of made for.</div>
-                    <div class="price">1500</div>
+                    <div class="name" id="<?php echo $_GET['id'];?>"><b><?php echo $ProductName?></b></div>
+                    <div class="price"><?php echo $price?></div>
+                    <div class="change">
+
+                    
+        <?php
+            $sql = "SELECT * FROM Subproducts WHERE productID ='".$_GET['id']."'";
+            $subs = $conn->query($sql);
+            if($subs->num_rows>0){
+                $size[] = array();
+                $color[] = array();
+                $x = 0;
+                while($row4 = $subs->fetch_assoc()){
+                    $s = $row4['size'];
+                    $c = $row4['color'];
+                    if(!in_array($s,$size)){
+                        $size[$x] = $row4['size'];
+                    }
+                    if(!in_array($c,$color)){
+                        $color[$x] = $row4['color'];
+                    }
+                    $x++;
+                }
+            }
+        ?>
+        <div class="size">
+            <select class="ch">
+                <?php
+                for($i=0;$i<sizeof($size);$i++){
+                    if($i+1 == $_GET['subId']){
+                        echo '<option  selected value="'.$size[$i].'">'.$size[$i].'</option>';
+                    }else{
+                        echo '<option  value="'.$size[$i].'">'.$size[$i].'</option>';
+                    }
+                  
+                }
+                ?>
+            </select>
+        </div>
+        <div class="color">
+            <select class="ch">
+                <?php
+                for($i=0;$i<sizeof($color);$i++){
+                    if($i+1 == $_GET['subId']){
+                        echo '<option  selected value="'.($i+1).'">'.$color[$i].'</option>';
+                    }else{
+                        echo '<option  value="'.($i+1).'">'.$color[$i].'</option>';
+                    }
+
+
+                    
+                }
+                ?>
+                </select>
+        </div>
+                    </div>
                     <div><a href="">add to cart</a></div>
                 </div>
             </div>
         </div>
-
+        <?php
+            }
+        ?>
+<script src="jquery.js"></script>
+<script src="src/jquery.exzoom.js"></script>
+<script src="main.js"></script>
 </body>
 </html>

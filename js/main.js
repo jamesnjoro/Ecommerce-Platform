@@ -100,3 +100,16 @@ $(document).on('click','.pagenum', function(){
       xhr.open('GET','product/viewProducts.php?page=' +page,true);
       xhr.send();
 })
+
+$(document).on('click','.others', function(event){
+    event.preventDefault();
+    var category = $(this).attr('id');
+    var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function(){
+          if (this.readyState == 4 && this.status == 200){
+              $('.products').html(this.responseText);
+          }
+      }
+      xhr.open('GET','product/viewProducts.php?page=1&category=' +category,true);
+      xhr.send();
+})

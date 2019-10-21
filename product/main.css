@@ -85,25 +85,26 @@ nav a{
 .container{
     margin:100px auto 20px;
     width: 80%;
+    
 }
 
 .prod{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    z-index: -1;
 }
 
-.prod img{
-    width: 100%;
-}
 .detail{
     display: inline-block;
 }
 
-.image{
-    max-height: 400px;
-    min-height: 300px;
-    width: auto;
-    background-color: white;
+.image {
+     margin: auto; max-width: 960px; 
+     
+}
+#exzoom {
+    width: 400px;
+    /*height: 400px;*/
 }
 
 

@@ -100,7 +100,7 @@
                         <a id="tongle" class="click" onclick="expandT()"><i class="fas fa-ellipsis-v"></i></a>
                     </div>
                     <div>
-                        <a href="" class="others">All</a>
+                        <a href=""class="others" id="all">All</a>
                         
                         <?php
                             include("admin/php/common.php");
@@ -111,7 +111,7 @@
 
                             if($result->num_rows > 0){
                                 while($row = $result->fetch_assoc()){
-                                    echo '<a href="" class ="other">'.$row["Name"].'</a>';
+                                    echo '<a href="" class="others" id='.$row["Name"].'>'.$row["Name"].'</a>';
                                 }
                             }
                         ?>
@@ -119,17 +119,12 @@
                     </div>
                     
                 </div>
-                <div class="sub">
-                    <span>Age<i class="fas fa-caret-down"></i></i></span>
-                </div>
             </div>
             
             <div class="products" id="product">
                 
             </div>
-            <div style ="margin-bottom:20px;"class="products">
-
-            </div>
+            
         </div>
 
         

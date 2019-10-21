@@ -6,11 +6,28 @@ $recordPage = 10;
                      include("../admin/php/common.php");
                      include("../admin/php/config.php");
                      $output = "<ul>";
-                     
-                     $sql = "SELECT * FROM products";
+                     if(isset($_GET['category'])){
+                         if($_GET['category']=="all"){
+                            $sql = "SELECT * FROM products";
+                         }else{
+                            $sql = "SELECT * FROM products WHERE category ='".$_GET['category']."'";
+                         }
+                        
+                     }else{
+                        $sql = "SELECT * FROM products";
+                     }
                      $rec = $conn->query($sql);
                      $limit = ($_GET['page'] - 1) * $recordPage;
-                     $sql = "SELECT * FROM products LIMIT ".$limit.",".$recordPage."";
+                     if(isset($_GET['category'])){
+                        if($_GET['category']=="all"){
+                            $sql = "SELECT * FROM products LIMIT ".$limit.",".$recordPage."";
+                         }else{
+                            $sql = "SELECT * FROM products WHERE category ='".$_GET['category']."'LIMIT ".$limit.",".$recordPage."";
+                         }  
+                     }else{
+                        $sql = "SELECT * FROM products LIMIT ".$limit.",".$recordPage."";
+                     }
+                     
                      $results = $conn->query($sql);
                      $totalRecords = $rec->num_rows;
        

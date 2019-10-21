@@ -160,36 +160,9 @@
                 </div>
             </div>
             <div class="topP">
-                <h1>Top Products</h1>
-                <?php
-                 $sql = "SELECT * FROM products";
-                 $results = $conn->query($sql);
-                 if($results->num_rows > 0){
-                    while($row = $results->fetch_assoc()){
-                        $photoId = $row['pictureID'];
-                      $sql2 = "SELECT * FROM photos WHERE productID ='".$photoId."'";
-                      $results2 = $conn->query($sql2);
-                        if($results2->num_rows>0){
-                            while($row2 = $results2->fetch_assoc()){
-                                $pic = $row2['photopath'];
-                                break;
-                            }
-                        }
-                    ?>
-                        <div>
-                        <div>
-                            <div class="pp">
-                                <img src="photos/<?php echo $pic;?>" alt="testing">
-                                <span><?php echo $row['productName'];?></span>
-                                <span><?php echo $row['price'];?><span>
-                            </div>
-                        </div>
+                
                        
-                    </div>
-                <?php
-                    }
-                }
-                ?>
+              
                
                        
             </div>
