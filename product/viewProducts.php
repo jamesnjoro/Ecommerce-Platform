@@ -1,13 +1,18 @@
 
 <?php
+$recordPage = 10;
+    if(isset($_GET['page'])){
+
                      include("../admin/php/common.php");
                      include("../admin/php/config.php");
-                     $sql = "SELECT * FROM products";
                      $output = "<ul>";
                      
-       
+                     $sql = "SELECT * FROM products";
+                     $rec = $conn->query($sql);
+                     $limit = ($_GET['page'] - 1) * $recordPage;
+                     $sql = "SELECT * FROM products LIMIT ".$limit.",".$recordPage."";
                      $results = $conn->query($sql);
-                     
+                     $totalRecords = $rec->num_rows;
        
                      if($results->num_rows > 0){
                          while($row = $results->fetch_assoc()){
@@ -54,5 +59,26 @@
 
                          $output .= "</ul>";
 
+                         $output .= '<div id="numC">';
+                $numPages = ceil($totalRecords/$recordPage);
+                $currentPage = $_GET['page'];
+                $output.='<div>';
+                if($currentPage-1 == 0){
+                    $output.='<span>&laquo</span>';
+                }else{
+                    $output.='<span class="pagenum" id='.($currentPage-1).' >&laquo</span>';
+                }
+                $output.='<span>'.$currentPage.'</span>'
+                .'<span>of</span>'
+                .'<span>'.$numPages.'</span>';
+                if($currentPage == $numPages){
+                    $output.='<span>&raquo</span>';
+                }else{
+                    $output .='<span class="pagenum" id='.($currentPage+1).' >&raquo</span>';
+                } 
+                $output .='</div>';
+                $output .= '</div>';
+
                          echo $output;
+                    }
 ?>

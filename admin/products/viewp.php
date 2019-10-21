@@ -54,9 +54,22 @@ $recordPage = 10;
                 $output .= '</table>';
                 $output .= '<div id="numC">';
                 $numPages = ceil($totalRecords/$recordPage);
-                for($i=0; $i<$numPages; $i++){
-                    $output.='<span class="pagenum" id='.($i+1).'>'.($i+1).'</span>';
+                $currentPage = $_GET['page'];
+                $output.='<div>';
+                if($currentPage-1 == 0){
+                    $output.='<span>&laquo</span>';
+                }else{
+                    $output.='<span class="pagenum" id='.($currentPage-1).' >&laquo</span>';
                 }
+                $output.='<span>'.$currentPage.'</span>'
+                .'<span>of</span>'
+                .'<span>'.$numPages.'</span>';
+                if($currentPage == $numPages){
+                    $output.='<span>&raquo</span>';
+                }else{
+                    $output .='<span class="pagenum" id='.($currentPage+1).' >&raquo</span>';
+                } 
+                $output .='</div>';
                 $output .= '</div>';
                 echo $output;
             }

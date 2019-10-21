@@ -85,6 +85,18 @@ $(document).ready(function(){
             $('#product').html(this.responseText);
         }
     }
-    xhr.open('GET','product/viewProducts.php',true);
+    xhr.open('GET','product/viewProducts.php?page=1',true);
     xhr.send();
+})
+
+$(document).on('click','.pagenum', function(){
+    var page = $(this).attr('id');
+    var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function(){
+          if (this.readyState == 4 && this.status == 200){
+              $('.products').html(this.responseText);
+          }
+      }
+      xhr.open('GET','product/viewProducts.php?page=' +page,true);
+      xhr.send();
 })

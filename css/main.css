@@ -326,6 +326,26 @@ footer{
    
 }
 
+#numC{
+    position: absolute;
+    left:35%;
+    margin-top:10px; 
+}
+#numC span{
+    padding: 8px 16px;
+    font-size: 25px;
+}
+.pagenum{
+    border: 0.5px solid black;
+    padding:10px;
+    background-color: beige;
+    transition-duration: 1s;
+    cursor: pointer;
+}
+.pagenum:hover{
+    background-color: cadetblue;
+}
+
 
 @media only screen and (min-width: 600px) {
     .navbar{
